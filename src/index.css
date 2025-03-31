@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+@theme {
+  --font-primary: "Courier Prime", monospace;
+  --color-leiDevBlue: #5d8ea4;
+  --color-Onyx: #353839;
+  --color-MatteBlack: #282828;
+  --color-Beige: #faf9f6;
+}
+
+.hover-effect {
+  @apply scale-95 hover:scale-100 transition ease-in-out duration-300 transform;
+}

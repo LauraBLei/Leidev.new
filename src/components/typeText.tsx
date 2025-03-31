@@ -20,12 +20,14 @@ const TypingEffectWithCursor: React.FC<TypingEffectProps> = ({
   useEffect(() => {
     if (!text) return; // Early exit if text is empty
 
+    const x = text.split("");
+
     setTypedText(""); // Reset the text when the effect starts
     currentIndexRef.current = 0; // Reset the index
 
     const typingInterval = setInterval(() => {
       if (currentIndexRef.current < text.length) {
-        setTypedText((prev) => prev + text[currentIndexRef.current]);
+        setTypedText((prev) => prev + x.shift());
         currentIndexRef.current++;
       } else {
         clearInterval(typingInterval); // Stop once typing is done
