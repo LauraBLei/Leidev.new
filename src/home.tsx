@@ -39,7 +39,7 @@ export const HomePage = () => {
       <section id="projects" className="h-screen pt-32">
         <ProjectsSection />
       </section>
-      <section id="about" className="h-screen pt-34">
+      <section id="about" className="h-screen pt-34 md:pt-50">
         <AboutSection />
       </section>
       <section id="dev-tools" className="h-screen pt-32">
