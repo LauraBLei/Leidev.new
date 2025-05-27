@@ -46,12 +46,12 @@ export const Header = () => {
 
   return (
     <header className="fixed z-40 top-0 flex items-center justify-between w-full px-5 py-2 bg-MatteBlack">
-      <img className="w-20" src="./Logo.png" alt="LeiDev Logo" />
+      <img className="w-14 md:w-20" src="./Logo.png" alt="LeiDev Logo" />
 
       <div className="">
         <RxHamburgerMenu
           size={28}
-          className="cursor-pointer text-leiDevBlue"
+          className="cursor-pointer text-leiDevBlue "
           onClick={toggleMenu}
         />
       </div>

@@ -4,7 +4,6 @@ import { WelcomeSection } from "./Sections/welcome";
 import { AboutSection } from "./Sections/about";
 import { DevToolsSection } from "./Sections/dev-tools";
 import { ContactSection } from "./Sections/contact";
-import { Header } from "./components/header";
 
 const sections = ["welcome", "projects", "about", "dev-tools", "contact"];
 
@@ -31,12 +30,11 @@ export const HomePage = () => {
   }, [index]);
 
   return (
-    <div className="h-screen">
-      <Header />
+    <div className="h-screen max-w-[1440px]">
       <section id="welcome" className="h-screen">
         <WelcomeSection />
       </section>
-      <section id="projects" className="h-screen pt-32">
+      <section id="projects" className="h-screen pt-20 md:pt-30">
         <ProjectsSection />
       </section>
       <section id="about" className="h-screen pt-34 md:pt-50">
