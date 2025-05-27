@@ -5,68 +5,63 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 interface CarouselProps {
   projects: Project[];
 }
-
 export const ImageCarousel = ({ projects }: CarouselProps) => {
-  const [currentProject, setCurrentProject] = useState(0);
-  const totalProjects = projects.length;
+  const [currentProject, setCurrentProject] = useState<number>(0);
+  const totalProjects = projects.length - 1;
 
   const handlePrev = () => {
-    setCurrentProject((prev) => (prev === 0 ? totalProjects - 1 : prev - 1));
+    if (currentProject === 0) {
+      setCurrentProject(totalProjects);
+    } else {
+      setCurrentProject(currentProject - 1);
+    }
   };
 
   const handleNext = () => {
-    setCurrentProject((prev) => (prev === totalProjects - 1 ? 0 : prev + 1));
+    if (currentProject === totalProjects) {
+      setCurrentProject(0);
+    } else {
+      setCurrentProject(currentProject + 1);
+    }
   };
-
   return (
-    <div className="max-w-[500px] flex flex-col items-center">
-      <div className="flex items-center gap-4">
-        <button onClick={handlePrev} className="hover-effect">
-          <ChevronLeft size={40} />
-        </button>
-
-        <div className="overflow-hidden w-[350px] h-full rounded-xl shadow-lg">
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{
-              width: `${totalProjects * 350}px`,
-              transform: `translateX(-${currentProject * 350}px)`,
-            }}
-          >
-            {projects.map((project) => (
-              <div
-                key={project.name}
-                className="w-[350px] flex-shrink-0 text-center"
-              >
-                <div className="w-full h-[250px] overflow-hidden rounded-xl">
-                  <img
-                    src={project.images[0].src}
-                    alt={project.images[0].alt}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <p className="mt-2 font-medium">{project.name}</p>
-              </div>
-            ))}
+    <div className="flex flex-col gap-2 w-full">
+      <div className="relative">
+        <div>
+          <div className="overflow-hidden w-full max-h-[300px] h-full">
+            <img
+              className="w-full h-full object-cover"
+              src={projects[currentProject].images[0].src}
+              alt={projects[currentProject].images[0].alt}
+            />
           </div>
+          <p className="text-center">{projects[currentProject].name}</p>
         </div>
-
-        <button onClick={handleNext} className="hover-effect">
-          <ChevronRight size={40} />
+        <div className="flex justify-center gap-2 mt-2 w-full">
+          {projects.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentProject(index)}
+              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+                currentProject === index
+                  ? "bg-leiDevBlue scale-110"
+                  : "bg-gray-400 hover:bg-gray-500"
+              }`}
+            />
+          ))}
+        </div>
+        <button
+          onClick={handlePrev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/70 p-1 rounded-full hover:bg-leiDevBlue "
+        >
+          <ChevronLeft size={24} />
         </button>
-      </div>
-      <div className="flex justify-center gap-2 mt-4">
-        {projects.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentProject(index)}
-            className={`h-3 w-3 rounded-full transition-colors duration-300 ${
-              currentProject === index
-                ? "bg-leiDevBlue scale-110"
-                : "bg-gray-400 hover:bg-gray-500"
-            }`}
-          />
-        ))}
+        <button
+          onClick={handleNext}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/70 p-1 rounded-full hover:bg-leiDevBlue"
+        >
+          <ChevronRight size={24} />
+        </button>
       </div>
     </div>
   );

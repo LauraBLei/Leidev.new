@@ -40,24 +40,33 @@ export const ProjectsSection = () => {
         </button>
       </div>
       {isSchool && (
-        <div className="max-w-[1400px] px-5 flex flex-col gap-2">
+        <div className="md:flex flex-col gap-2 hidden ">
           <h2 className="text-xl">School Projects</h2>
-          <div className="flex overflow-x-auto gap-5">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4">
             {school.map((project) => {
               return <ProjectCard project={project} />;
             })}
           </div>
         </div>
       )}
-      {isSchool && <ImageCarousel projects={school} />}
+      {isSchool && (
+        <div className="block md:hidden">
+          <ImageCarousel projects={school} />
+        </div>
+      )}
       {isOther && (
-        <div className="max-w-[1400px] px-5 flex flex-col gap-2">
+        <div className="max-w-[1400px] px-5 hidden md:flex flex-col gap-2">
           <h2 className="text-xl">Other Projects</h2>
           <div className="flex gap-5 overflow-x-auto">
             {other.map((project) => {
               return <ProjectCard project={project} />;
             })}
           </div>
+        </div>
+      )}
+      {isOther && (
+        <div className="block md:hidden">
+          <ImageCarousel projects={other} />
         </div>
       )}
     </div>

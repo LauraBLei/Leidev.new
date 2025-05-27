@@ -57,8 +57,8 @@ export const personalProjects: personalProjects = {
       images: [
         { src: "./projectImages/personal/wedding1.png", alt: "Wedding page" },
       ],
-      id: "",
-      text: "",
+      id: "02",
+      text: "This is a website i made for me and my husbands wedding, it started as a STD and will expand to an invitation and information about the wedding.",
     },
   ],
 };
