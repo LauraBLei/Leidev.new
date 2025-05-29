@@ -3,7 +3,6 @@ import { ProjectsSection } from "./Sections/projects";
 import { WelcomeSection } from "./Sections/welcome";
 import { AboutSection } from "./Sections/about";
 import { DevToolsSection } from "./Sections/dev-tools";
-import { ContactSection } from "./Sections/contact";
 
 const sections = ["welcome", "projects", "about", "dev-tools", "contact"];
 
@@ -40,11 +39,8 @@ export const HomePage = () => {
       <section id="about" className="h-screen pt-34 md:pt-50">
         <AboutSection />
       </section>
-      <section id="dev-tools" className="h-screen pt-32">
+      <section id="dev-tools" className="h-screen pt-20 md:pt-30">
         <DevToolsSection />
-      </section>
-      <section id="contact" className="h-screen pt-32">
-        <ContactSection />
       </section>
     </div>
   );

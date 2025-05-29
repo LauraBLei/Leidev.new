@@ -95,9 +95,6 @@ const NavList = () => {
       <button onClick={() => GoToSection("dev-tools")} className="hover-effect">
         Dev-Tools
       </button>
-      <button onClick={() => GoToSection("contact")} className="hover-effect">
-        Contact
-      </button>
     </nav>
   );
 };

@@ -1,3 +1,5 @@
+import { ContactSection } from "./contact";
+
 export const WelcomeSection = () => {
   return (
     <div className="font-primary text-leiDevBlue h-screen flex flex-col justify-center gap-7 max-w-[1400x] p-5">
@@ -7,6 +9,7 @@ export const WelcomeSection = () => {
         Thank you for visiting my portfolio, and I hope you enjoy exploring my
         work as much as I enjoy creating it!
       </p>
+      <ContactSection />
     </div>
   );
 };

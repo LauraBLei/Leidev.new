@@ -1,26 +1,23 @@
-import { devTools } from "../Data/devTools";
+import { OnMyRadarTools } from "../components/onMyRadarTools";
+import { WorkedWithTools } from "../components/workedWithTools";
 
 export const DevToolsSection = () => {
   return (
-    <div>
-      <div className="w-full p-5 mb-12 bg-leiDevBlue text-MatteBlack">
-        <h1 className="text-2xl">Dev-Tools</h1>
+    <div className="flex flex-col items-center">
+      <div className="w-full p-2 md:p-5 mb-5 md:mb-12 bg-leiDevBlue text-MatteBlack">
+        <h1 className="text-base md:text-2xl">Dev-Tools</h1>
       </div>
-      <div className="px-5 flex flex-wrap max-w-[600px] gap-7 justify-center">
-        {devTools.map((tool) => {
-          return (
-            <div className="flex text-lg text-Beige gap-2">
-              <div className="w-[30px] h-[30px]">
-                <img
-                  className="object-cover"
-                  src={tool.image ? tool.image : "./placeholder.jpg"}
-                  alt={tool.tool}
-                />
-              </div>
-              <p>{tool.tool}</p>
-            </div>
-          );
-        })}
+      <div className="mb-10">
+        <h2 className="px-2 text-base md:text-xl text-leiDevBlue py-2 border-b-[1px] mb-5">
+          Tools i have worked with:
+        </h2>
+        <WorkedWithTools />
+      </div>
+      <div className="mb-5">
+        <h2 className=" px-2 text-base md:text-xl text-leiDevBlue py-2 border-b-[1px] mb-5">
+          On My Radar:
+        </h2>
+        <OnMyRadarTools />
       </div>
     </div>
   );
