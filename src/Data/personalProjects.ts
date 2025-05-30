@@ -37,11 +37,11 @@ export const personalProjects: personalProjects = {
           alt: "Image of the game Tomplania",
         },
         {
-          src: "./projectImages/personal/Tomplania4.png",
+          src: "./projectImages/personal/tomplania4.png",
           alt: "Image of the game Tomplania",
         },
         {
-          src: "./projectImages/personal/Tomplania5.png",
+          src: "./projectImages/personal/tomplania5.png",
           alt: "Image of the game Tomplania",
         },
       ],
