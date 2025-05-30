@@ -4,7 +4,7 @@ export type Project = {
   "completion date": string;
   "repo-link": string;
   "livepage-link": string;
-  images: Media;
+  image: Media;
   text: string;
   id: string;
   video: Video;

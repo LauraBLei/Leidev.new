@@ -33,7 +33,7 @@ export const personalProjects: personalProjects = {
       },
 
       video: {
-        src: "",
+        src: "./videos/tomplania.mp4",
         poster: "./projectImages/personal/Tomplania1.png",
       },
       id: "01",

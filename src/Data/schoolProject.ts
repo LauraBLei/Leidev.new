@@ -51,7 +51,7 @@ export const schoolProjects: schoolProjects = {
       },
 
       video: {
-        src: "",
+        src: "./videos/LA.mp4",
         poster: "./projectImages/school/LA1.png",
       },
       id: "2",
@@ -69,7 +69,7 @@ export const schoolProjects: schoolProjects = {
       },
 
       video: {
-        src: "",
+        src: "./videos/theFrogs.mp4",
         poster: "./projectImages/school/frogs.png",
       },
       id: "3",
