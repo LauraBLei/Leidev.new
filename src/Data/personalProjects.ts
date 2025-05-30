@@ -12,7 +12,11 @@ export const personalProjects: personalProjects = {
     "completion date": "",
     "repo-link": "",
     "livepage-link": "",
-    images: [{ src: "", alt: "" }],
+    image: { src: "", alt: "" },
+    video: {
+      src: "",
+      poster: "",
+    },
     id: "",
     text: "",
   },
@@ -23,28 +27,15 @@ export const personalProjects: personalProjects = {
       "completion date": "Summer 2024",
       "repo-link": "https://github.com/LauraBLei/Tomplania",
       "livepage-link": "https://tomplania.leidev.net/",
-      images: [
-        {
-          src: "./projectImages/personal/Tomplania1.png",
-          alt: "Image of the game Tomplania",
-        },
-        {
-          src: "./projectImages/personal/Tomplania2.png",
-          alt: "Image of the game Tomplania",
-        },
-        {
-          src: "./projectImages/personal/Tomplania3.png",
-          alt: "Image of the game Tomplania",
-        },
-        {
-          src: "./projectImages/personal/tomplania4.png",
-          alt: "Image of the game Tomplania",
-        },
-        {
-          src: "./projectImages/personal/tomplania5.png",
-          alt: "Image of the game Tomplania",
-        },
-      ],
+      image: {
+        src: "./projectImages/personal/Tomplania1.png",
+        alt: "Image of the game Tomplania",
+      },
+
+      video: {
+        src: "",
+        poster: "./projectImages/personal/Tomplania1.png",
+      },
       id: "01",
       text: "Tomplania is a turn-based RPG game I built using React, TypeScript, and Tailwind CSS. This project was my first experience with both React and TypeScript, and I used it as a hands-on opportunity to learn and grow. The learning curve was both challenging and rewarding, and I gained a solid foundation in component-based architecture and typed JavaScript through this project.",
     },
@@ -54,9 +45,14 @@ export const personalProjects: personalProjects = {
       "completion date": "Ongoing",
       "repo-link": "https://github.com/LauraBLei/Wedding",
       "livepage-link": "https://wedding.leidev.net/",
-      images: [
-        { src: "./projectImages/personal/wedding1.png", alt: "Wedding page" },
-      ],
+      image: {
+        src: "./projectImages/personal/wedding1.png",
+        alt: "Wedding page",
+      },
+      video: {
+        src: "",
+        poster: "./projectImages/personal/wedding1.png",
+      },
       id: "02",
       text: "This is a website i made for me and my husbands wedding, it started as a STD and will expand to an invitation and information about the wedding.",
     },

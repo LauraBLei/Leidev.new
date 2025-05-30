@@ -19,7 +19,7 @@ export const ImageCarousel = ({ images, projects }: CarouselProps) => {
 
   const currentMedia: Media = isImagesArray
     ? images![isSingleItem ? 0 : currentIndex]
-    : projects![isSingleItem ? 0 : currentIndex].images?.[0];
+    : projects![isSingleItem ? 0 : currentIndex].image;
 
   const currentName = isProjectsArray
     ? projects![isSingleItem ? 0 : currentIndex].name

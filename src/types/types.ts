@@ -4,12 +4,18 @@ export type Project = {
   "completion date": string;
   "repo-link": string;
   "livepage-link": string;
-  images: Media[];
+  images: Media;
   text: string;
   id: string;
+  video: Video;
 };
 
 export type Media = {
   src: string;
   alt: string;
+};
+
+export type Video = {
+  src: string;
+  poster?: string;
 };

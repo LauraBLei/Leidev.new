@@ -22,10 +22,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       <div className=" w-full h-[280px] rounded-md overflow-hidden flex items-center">
         <img
           className="object-cover w-full h-full"
-          src={
-            project.images.length ? project.images[0].src : "./placeholder.jpg"
-          }
-          alt={project.images.length ? project.images[0].alt : "Text not found"}
+          src={project.image.src ? project.image.src : "./placeholder.jpg"}
+          alt={project.image.alt ? project.image.alt : "Text not found"}
         />
       </div>
       <p className="text-center text-lg">{project.name}</p>
