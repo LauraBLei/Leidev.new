@@ -79,12 +79,22 @@ export const ProjectModal = () => {
             </div>
           </div>
           <div className="flex w-full">
-            <button className="rounded-md  bg-leiDevBlue text-MatteBlack font-semibold shadow-md py-2 flex-1 hover-effect">
+            <a
+              href={selectedProject?.["repo-link"]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md text-center bg-leiDevBlue text-MatteBlack font-semibold shadow-md py-2 flex-1 hover-effect"
+            >
               Repository
-            </button>
-            <button className="rounded-md  bg-leiDevBlue text-MatteBlack font-semibold shadow-md py-2 flex-1 hover-effect">
+            </a>
+            <a
+              href={selectedProject?.["livepage-link"]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-md text-center  bg-leiDevBlue text-MatteBlack font-semibold shadow-md py-2 flex-1 hover-effect"
+            >
               Live Pages
-            </button>
+            </a>
           </div>
         </div>
       </div>
