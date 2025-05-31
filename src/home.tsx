@@ -82,7 +82,7 @@ export const HomePage = () => {
   }, [index]);
 
   return (
-    <div className="relative h-screen max-w-[1440px] overflow-hidden">
+    <div className="relative h-screen max-w-[1440px] overflow-hidden touch-pan-y">
       {/* Sidebar */}
       <div className="fixed top-1/2 right-6 -translate-y-1/2 z-50 flex flex-col gap-3">
         {sections.map((_, i) => (
