@@ -2,14 +2,14 @@ export const AboutOnDesktop = () => {
   return (
     <div className="flex flex-col ">
       <div className="flex">
-        <div className="overflow-hidden h-[464px] w-full min-w-[464px] flex items-center ">
+        <div className="overflow-hidden h-[464px] w-full flex-1 flex items-center ">
           <img
-            className="w-full h-full"
+            className="w-full h-full object-cover"
             src="./profileImage.jpg"
             alt="Image of me, Laura Lei"
           />
         </div>
-        <div className="text-white  font-primary p-2 flex flex-col gap-5 pr-5">
+        <div className="text-white  font-primary p-2 flex flex-col gap-5 pr-5 flex-1">
           <p className="text-xl">
             My name is Laura, and i'm based in Bergen, Norway.
           </p>

@@ -45,7 +45,7 @@ export const personalProjects: personalProjects = {
       "repo-link": "https://github.com/LauraBLei/Tomplania",
       "livepage-link": "https://tomplania.leidev.net/",
       image: {
-        src: "./projectImages/personal/Tomplania1.png",
+        src: "./projectImages/personal/Tomplania1.jpg",
         alt: "Image of the game Tomplania",
       },
 
