@@ -45,7 +45,7 @@ export const ProjectModal = () => {
             {selectedProject?.video.src ? (
               <video
                 key={selectedProject.id}
-                className="w-full rounded-xl shadow-lg max-h-[500px] mb-4"
+                className="w-full rounded-xl max-h-[354px] shadow-lg  mb-4"
                 src={selectedProject.video.src}
                 poster={selectedProject.video.poster}
                 controls
@@ -53,7 +53,7 @@ export const ProjectModal = () => {
                 muted
               />
             ) : (
-              <div className="w-full rounded-xl max-h-[400px] overflow-hidden mb-4 shadow-lg shadow-Onyx ">
+              <div className="w-full rounded-xl max-h-[354px] overflow-hidden mb-4 shadow-lg shadow-Onyx ">
                 <img
                   className="w-full  h-full  object-cover"
                   src={selectedProject?.video.poster}
