@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CommonContext } from "../types/context";
 import { BsX } from "react-icons/bs";
@@ -10,7 +10,7 @@ export const Header = () => {
   const [showNavContent, setShowNavContent] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const toggleMenu = () => {
+  const toggleMenu = useCallback(() => {
     if (headerOpen) {
       setAnimateOut(true);
       setShowNavContent(false);
@@ -24,7 +24,8 @@ export const Header = () => {
         setShowNavContent(true);
       }, 300);
     }
-  };
+  }, [headerOpen, setHeaderOpen]);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -43,7 +44,7 @@ export const Header = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [headerOpen]);
+  }, [headerOpen, toggleMenu]);
 
   return (
     <header className="fixed z-40 top-0 flex items-center justify-between w-full px-5 py-2 bg-MatteBlack">
@@ -78,30 +79,6 @@ export const Header = () => {
     </header>
   );
 };
-
-// const NavList = () => {
-//   const GoToSection = (section: string) => {
-//     document
-//       .getElementById(`${section}`)
-//       ?.scrollIntoView({ behavior: "smooth" });
-//   };
-//   return (
-//     <nav className="flex flex-col gap-2 font-primary text-2xl">
-//       <button onClick={() => GoToSection("welcome")} className="hover-effect">
-//         Welcome
-//       </button>
-//       <button onClick={() => GoToSection("projects")} className="hover-effect">
-//         Projects
-//       </button>
-//       <button onClick={() => GoToSection("about")} className="hover-effect">
-//         About Me
-//       </button>
-//       <button onClick={() => GoToSection("dev-tools")} className="hover-effect">
-//         Dev-Tools
-//       </button>
-//     </nav>
-//   );
-// };
 
 const sectionIds = ["welcome", "projects", "about", "dev-tools"];
 
