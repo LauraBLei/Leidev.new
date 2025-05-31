@@ -1,24 +1,27 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext, useRef } from "react";
 import { ProjectsSection } from "./Sections/projects";
 import { WelcomeSection } from "./Sections/welcome";
 import { AboutSection } from "./Sections/about";
 import { DevToolsSection } from "./Sections/dev-tools";
 import { CommonContext, CommonContextType } from "./types/context";
 
-const sections = ["welcome", "projects", "about", "dev-tools", "contact"];
+const sections = ["welcome", "projects", "about", "dev-tools"];
 
 export const HomePage = () => {
   const [index, setIndex] = useState(0);
   const { projectModalOpen } = useContext(CommonContext) as CommonContextType;
 
+  const touchStartY = useRef<number | null>(null);
+  const touchEndY = useRef<number | null>(null);
+  const canScrollRef = useRef(true);
+
   useEffect(() => {
-    let canScroll = true;
     let timeoutId: ReturnType<typeof setTimeout>;
 
     const handleScroll = (event: WheelEvent) => {
-      if (!canScroll || projectModalOpen) return;
+      if (!canScrollRef.current || projectModalOpen) return;
 
-      canScroll = false;
+      canScrollRef.current = false;
 
       if (event.deltaY > 0) {
         setIndex((prev) => Math.min(prev + 1, sections.length - 1));
@@ -27,14 +30,48 @@ export const HomePage = () => {
       }
 
       timeoutId = setTimeout(() => {
-        canScroll = true;
-      }, 100);
+        canScrollRef.current = true;
+      }, 800);
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY.current = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (
+        !canScrollRef.current ||
+        projectModalOpen ||
+        touchStartY.current === null
+      )
+        return;
+
+      touchEndY.current = e.changedTouches[0].clientY;
+      const deltaY = touchStartY.current - touchEndY.current;
+
+      // Threshold to prevent accidental small swipes
+      const threshold = 50;
+
+      if (deltaY > threshold) {
+        setIndex((prev) => Math.min(prev + 1, sections.length - 1));
+      } else if (deltaY < -threshold) {
+        setIndex((prev) => Math.max(prev - 1, 0));
+      }
+
+      canScrollRef.current = false;
+      timeoutId = setTimeout(() => {
+        canScrollRef.current = true;
+      }, 800);
     };
 
     window.addEventListener("wheel", handleScroll, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: false });
+    window.addEventListener("touchend", handleTouchEnd, { passive: false });
 
     return () => {
       window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
       clearTimeout(timeoutId);
     };
   }, [projectModalOpen]);
