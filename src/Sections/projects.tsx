@@ -13,7 +13,7 @@ export const ProjectsSection = () => {
   return (
     <div className="h-screen flex flex-col font-primary text-Beige gap-9 ">
       <div className="w-full p-2 md:p-5 bg-leiDevBlue text-MatteBlack">
-        <h1 className="text-lg md:text-2xl">Projects</h1>
+        <h1 className="headline">Projects</h1>
       </div>
       <div className="relative flex rounded-full  justify-between  w-full">
         <div
