@@ -1,7 +1,7 @@
 export const AboutOnDesktop = () => {
   return (
-    <div className="flex flex-col">
-      <div className="overflow-hidden w-full max-h-[600px] flex items-center ">
+    <div className="flex ">
+      <div className="overflow-hidden h-[464px] w-full min-w-[464px] flex items-center ">
         <img
           className="w-full h-full"
           src="./profileImage.jpg"
