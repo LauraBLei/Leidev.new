@@ -49,7 +49,6 @@ export const HomePage = () => {
       touchEndY.current = e.changedTouches[0].clientY;
       const deltaY = touchStartY.current - touchEndY.current;
 
-      // Threshold to prevent accidental small swipes
       const threshold = 50;
 
       if (deltaY > threshold) {
@@ -83,7 +82,24 @@ export const HomePage = () => {
   }, [index]);
 
   return (
-    <div className="h-screen max-w-[1440px] overflow-hidden">
+    <div className="relative h-screen max-w-[1440px] overflow-hidden">
+      {/* Sidebar */}
+      <div className="fixed top-1/2 right-6 -translate-y-1/2 z-50 flex flex-col gap-3">
+        {sections.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIndex(i)}
+            className={`h-3 w-3 rounded-full border-2 transition-all duration-300 ${
+              index === i
+                ? "bg-leiDevBlue border-leiDevBlue scale-110"
+                : "bg-transparent border-white hover:border-leiDevBlue"
+            }`}
+            aria-label={`Scroll to ${sections[i]}`}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
       <section id="welcome" className="h-screen">
         <WelcomeSection />
       </section>
