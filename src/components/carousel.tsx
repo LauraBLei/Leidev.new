@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useRef } from "react";
 import { Project } from "../types/types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CommonContext } from "../types/context";
@@ -10,6 +10,9 @@ interface CarouselProps {
 export const ImageCarousel = ({ projects }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { setSelectedProject, setProjectModalOpen } = useContext(CommonContext);
+
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   if (!projects?.length) return null;
 
@@ -32,12 +35,36 @@ export const ImageCarousel = ({ projects }: CarouselProps) => {
     setProjectModalOpen(true);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+
+    touchEndX.current = e.changedTouches[0].clientX;
+    const deltaX = touchStartX.current - touchEndX.current;
+
+    const threshold = 50; // swipe threshold
+    if (deltaX > threshold) {
+      handleNext();
+    } else if (deltaX < -threshold) {
+      handlePrev();
+    }
+
+    // Reset
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
     <div className="flex flex-col gap-2 w-full">
       <div className="relative">
         <div
           className="overflow-hidden w-full max-h-[300px] h-full cursor-pointer"
           onClick={handleImageClick}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           <img
             className="w-full h-full object-cover"
