@@ -12,30 +12,31 @@ export const HomePage = () => {
   const { projectModalOpen } = useContext(CommonContext) as CommonContextType;
 
   useEffect(() => {
-    if (projectModalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    let canScroll = true;
+    let timeoutId: ReturnType<typeof setTimeout>;
 
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [projectModalOpen]);
-
-  useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
-      if (projectModalOpen) return;
+      if (!canScroll || projectModalOpen) return;
+
+      canScroll = false;
 
       if (event.deltaY > 0) {
         setIndex((prev) => Math.min(prev + 1, sections.length - 1));
       } else {
         setIndex((prev) => Math.max(prev - 1, 0));
       }
+
+      timeoutId = setTimeout(() => {
+        canScroll = true;
+      }, 100);
     };
 
-    window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
+    window.addEventListener("wheel", handleScroll, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      clearTimeout(timeoutId);
+    };
   }, [projectModalOpen]);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export const HomePage = () => {
   }, [index]);
 
   return (
-    <div className="h-screen max-w-[1440px]">
+    <div className="h-screen max-w-[1440px] overflow-hidden">
       <section id="welcome" className="h-screen">
         <WelcomeSection />
       </section>

@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CommonContext } from "../types/context";
 import { BsX } from "react-icons/bs";
+import { useActiveSection } from "../hooks/sectionTracker";
 
 export const Header = () => {
   const { headerOpen, setHeaderOpen } = useContext(CommonContext);
@@ -78,23 +79,54 @@ export const Header = () => {
   );
 };
 
+// const NavList = () => {
+//   const GoToSection = (section: string) => {
+//     document
+//       .getElementById(`${section}`)
+//       ?.scrollIntoView({ behavior: "smooth" });
+//   };
+//   return (
+//     <nav className="flex flex-col gap-2 font-primary text-2xl">
+//       <button onClick={() => GoToSection("welcome")} className="hover-effect">
+//         Welcome
+//       </button>
+//       <button onClick={() => GoToSection("projects")} className="hover-effect">
+//         Projects
+//       </button>
+//       <button onClick={() => GoToSection("about")} className="hover-effect">
+//         About Me
+//       </button>
+//       <button onClick={() => GoToSection("dev-tools")} className="hover-effect">
+//         Dev-Tools
+//       </button>
+//     </nav>
+//   );
+// };
+
+const sectionIds = ["welcome", "projects", "about", "dev-tools"];
+
 const NavList = () => {
+  const active = useActiveSection(sectionIds);
+
   const GoToSection = (section: string) => {
-    document
-      .getElementById(`${section}`)
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <nav className="flex flex-col gap-2 font-primary text-2xl">
-      <button onClick={() => GoToSection("projects")} className="hover-effect">
-        Projects
-      </button>
-      <button onClick={() => GoToSection("about")} className="hover-effect">
-        About Me
-      </button>
-      <button onClick={() => GoToSection("dev-tools")} className="hover-effect">
-        Dev-Tools
-      </button>
+      {sectionIds.map((id) => (
+        <button
+          key={id}
+          onClick={() => GoToSection(id)}
+          className={`hover-effect transition-colors ${
+            active === id
+              ? "text-white font-semibold underline"
+              : "text-gray-300"
+          }`}
+        >
+          {id.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())}
+        </button>
+      ))}
     </nav>
   );
 };
