@@ -3,7 +3,7 @@ import { ContactSection } from "./contact";
 
 export const WelcomeSection = () => {
   return (
-    <div className="font-primary text-leiDevBlue h-screen flex flex-col justify-between gap-7  max-w-[1400x] p-5">
+    <div className="font-primary text-leiDevBlue h-dvh flex flex-col justify-between gap-7  max-w-[1400x] p-5">
       <div className="flex flex-col gap-5 md:gap-10 h-full justify-center">
         <h1 className="text-2xl md:text-4xl md:text-6xl ">Welcome!</h1>
         <p className="text-Beige text-4xl md:text-7xl lg:text-8xl">
