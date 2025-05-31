@@ -61,7 +61,7 @@ export const ImageCarousel = ({ projects }: CarouselProps) => {
     <div className="flex flex-col gap-2 w-full">
       <div className="relative">
         <div
-          className="overflow-hidden w-full max-h-[300px] h-full cursor-pointer"
+          className="overflow-hidden w-full h-[300px] cursor-pointer"
           onClick={handleImageClick}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
