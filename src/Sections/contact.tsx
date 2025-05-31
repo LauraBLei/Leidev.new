@@ -11,7 +11,7 @@ export const ContactSection = () => {
           className="flex items-center gap-5 text-md md:text-lg hover-effect"
         >
           <FaLinkedin className="text-leiDevBlue w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
-          <p>Linked In</p>
+          <p>LinkedIn</p>
         </a>
         <a
           target="_blanc"
