@@ -33,7 +33,7 @@ export const schoolProjects: schoolProjects = {
       },
 
       video: {
-        src: "",
+        src: "./videos/csm.mp4",
         poster: "./projectImages/school/CSM1.png",
       },
       id: "1",
