@@ -1,29 +1,23 @@
-import { useState } from "react";
-import { Media, Project } from "../types/types";
+import { useState, useContext } from "react";
+import { Project } from "../types/types";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { CommonContext } from "../types/context";
 
 interface CarouselProps {
-  images?: Media[]; // Optional, but either this...
-  projects?: Project[]; // ...or this must be provided
+  projects: Project[];
 }
 
-export const ImageCarousel = ({ images, projects }: CarouselProps) => {
+export const ImageCarousel = ({ projects }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const isImagesArray = !!images?.length;
-  const isProjectsArray = !!projects?.length;
+  const { setSelectedProject, setProjectModalOpen } = useContext(CommonContext);
 
-  if (!isImagesArray && !isProjectsArray) return null;
+  if (!projects?.length) return null;
 
-  const contentLength = isImagesArray ? images!.length : projects!.length;
+  const contentLength = projects.length;
   const isSingleItem = contentLength <= 1;
 
-  const currentMedia: Media = isImagesArray
-    ? images![isSingleItem ? 0 : currentIndex]
-    : projects![isSingleItem ? 0 : currentIndex].image;
-
-  const currentName = isProjectsArray
-    ? projects![isSingleItem ? 0 : currentIndex].name
-    : null;
+  const currentProject = projects[currentIndex];
+  const { image, name } = currentProject;
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? contentLength - 1 : prev - 1));
@@ -33,23 +27,31 @@ export const ImageCarousel = ({ images, projects }: CarouselProps) => {
     setCurrentIndex((prev) => (prev === contentLength - 1 ? 0 : prev + 1));
   };
 
+  const handleImageClick = () => {
+    setSelectedProject(currentProject);
+    setProjectModalOpen(true);
+  };
+
   return (
     <div className="flex flex-col gap-2 w-full">
       <div className="relative">
-        <div className="overflow-hidden w-full max-h-[300px] h-full">
+        <div
+          className="overflow-hidden w-full max-h-[300px] h-full cursor-pointer"
+          onClick={handleImageClick}
+        >
           <img
             className="w-full h-full object-cover"
-            src={currentMedia?.src}
-            alt={currentMedia?.alt}
+            src={image.src}
+            alt={image.alt}
           />
         </div>
 
-        {currentName && <p className="text-center">{currentName}</p>}
+        {name && <p className="text-center">{name}</p>}
 
         {!isSingleItem && (
           <>
             <div className="flex justify-center gap-2 mt-2 w-full">
-              {Array.from({ length: contentLength }).map((_, index) => (
+              {projects.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
@@ -58,6 +60,7 @@ export const ImageCarousel = ({ images, projects }: CarouselProps) => {
                       ? "bg-leiDevBlue scale-110"
                       : "bg-gray-400 hover:bg-gray-500"
                   }`}
+                  aria-label={`Go to image ${index + 1}`}
                 />
               ))}
             </div>
@@ -65,12 +68,15 @@ export const ImageCarousel = ({ images, projects }: CarouselProps) => {
             <button
               onClick={handlePrev}
               className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/70 p-1 rounded-full hover:bg-leiDevBlue"
+              aria-label="Previous image"
             >
               <ChevronLeft size={24} />
             </button>
+
             <button
               onClick={handleNext}
               className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/70 p-1 rounded-full hover:bg-leiDevBlue"
+              aria-label="Next image"
             >
               <ChevronRight size={24} />
             </button>

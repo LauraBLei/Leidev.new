@@ -40,6 +40,7 @@ export const ProjectModal = () => {
         >
           <button onClick={handleClose} className="flex w-full justify-end">
             <X className="hover-effect w-6 h-6 md:w-10 md:h-10 mt-[-20px] mb-[20px]" />
+            <p className="sr-only">Close</p>
           </button>
           <div>
             {selectedProject?.video.src ? (

@@ -9,7 +9,7 @@ export type CommonContextType = {
   setProjectModalOpen: (input: boolean) => void;
 
   selectedProject?: Project;
-  setSelectedProject?: (project: Project) => void;
+  setSelectedProject?: (project?: Project) => void;
 };
 
 export const CommonContext = createContext<CommonContextType>(

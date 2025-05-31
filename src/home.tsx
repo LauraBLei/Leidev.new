@@ -1,16 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { ProjectsSection } from "./Sections/projects";
 import { WelcomeSection } from "./Sections/welcome";
 import { AboutSection } from "./Sections/about";
 import { DevToolsSection } from "./Sections/dev-tools";
+import { CommonContext, CommonContextType } from "./types/context";
 
 const sections = ["welcome", "projects", "about", "dev-tools", "contact"];
 
 export const HomePage = () => {
   const [index, setIndex] = useState(0);
+  const { projectModalOpen } = useContext(CommonContext) as CommonContextType;
+
+  useEffect(() => {
+    if (projectModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [projectModalOpen]);
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
+      if (projectModalOpen) return;
+
       if (event.deltaY > 0) {
         setIndex((prev) => Math.min(prev + 1, sections.length - 1));
       } else {
@@ -20,7 +36,7 @@ export const HomePage = () => {
 
     window.addEventListener("wheel", handleScroll);
     return () => window.removeEventListener("wheel", handleScroll);
-  }, []);
+  }, [projectModalOpen]);
 
   useEffect(() => {
     document
