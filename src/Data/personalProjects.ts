@@ -28,12 +28,12 @@ export const personalProjects: personalProjects = {
       "repo-link": "https://github.com/LauraBLei/Wedding",
       "livepage-link": "https://wedding.leidev.net/",
       image: {
-        src: "./projectImages/personal/wedding1.png",
+        src: "./projectImages/personal/wedding1.jpg",
         alt: "Wedding page",
       },
       video: {
         src: "",
-        poster: "./projectImages/personal/wedding1.png",
+        poster: "./projectImages/personal/wedding1.jpg",
       },
       id: "02",
       text: "This is a website i made for me and my husbands wedding, it started as a STD and will expand to an invitation and information about the wedding.",
@@ -51,7 +51,7 @@ export const personalProjects: personalProjects = {
 
       video: {
         src: "./videos/tomplania.mp4",
-        poster: "./projectImages/personal/Tomplania1.png",
+        poster: "./projectImages/personal/Tomplania1.jpg",
       },
       id: "01",
       text: "Tomplania is a turn-based RPG game I built using React, TypeScript, and Tailwind CSS. This project was my first experience with both React and TypeScript, and I used it as a hands-on opportunity to learn and grow. The learning curve was both challenging and rewarding, and I gained a solid foundation in component-based architecture and typed JavaScript through this project.",

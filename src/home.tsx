@@ -100,7 +100,7 @@ export const HomePage = () => {
       </div>
 
       {/* Content */}
-      <section id="welcome" className="h-screen">
+      <section id="welcome" className="h-dvh">
         <WelcomeSection />
       </section>
       <section id="projects" className="h-screen pt-20 md:pt-30">
