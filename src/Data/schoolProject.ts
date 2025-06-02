@@ -28,13 +28,13 @@ export const schoolProjects: schoolProjects = {
       "repo-link": "https://github.com/LauraBLei/holidaze",
       "livepage-link": "https://holidaze.leidev.net/",
       image: {
-        src: "./projectImages/school/holidaze1.png",
+        src: "./projectImages/school/holidaze1.jpg",
         alt: "Holidaze website",
       },
 
       video: {
         src: "./videos/holidaze.mp4",
-        poster: "./projectImages/school/holidaze1.png",
+        poster: "./projectImages/school/holidaze1.jpg",
       },
       id: "4",
       text: "",
@@ -46,13 +46,13 @@ export const schoolProjects: schoolProjects = {
       "repo-link": "https://github.com/LauraBLei/TheFrogs",
       "livepage-link": "https://the-frogs-al6z.vercel.app/",
       image: {
-        src: "./projectImages/school/frogs.png",
+        src: "./projectImages/school/frogs.jpg",
         alt: "The Frogs website home page",
       },
 
       video: {
         src: "./videos/theFrogs.mp4",
-        poster: "./projectImages/school/frogs.png",
+        poster: "./projectImages/school/frogs.jpg",
       },
       id: "3",
       text: "The Frogs was my Javascript Frameworks project. It waa not my first project with React, but i still had fun playing around with it. I had some friends choose the logo, and color for the page, which made the project challenging and more fun!",
@@ -64,13 +64,13 @@ export const schoolProjects: schoolProjects = {
       "repo-link": "https://github.com/LauraBLei/SemesterProject2",
       "livepage-link": "https://semesterproject2.leidev.net/",
       image: {
-        src: "./projectImages/school/LA1.png",
+        src: "./projectImages/school/LA1.jpg",
         alt: "Home page of Luxora Auctions",
       },
 
       video: {
         src: "./videos/LA.mp4",
-        poster: "./projectImages/school/LA1.png",
+        poster: "./projectImages/school/LA1.jpg",
       },
       id: "2",
       text: "LA was my second-semester project and marked the first time I integrated Tailwind CSS into a build. Using Tailwind significantly improved my development workflow and styling consistency. I really enjoyed working on this project—and it ultimately earned me an A, which was incredibly rewarding.",
@@ -82,13 +82,13 @@ export const schoolProjects: schoolProjects = {
       "repo-link": "https://github.com/LauraBLei/-js-1-ca",
       "livepage-link": "https://laurablei.github.io/Semester-project-1/",
       image: {
-        src: "./projectImages/school/CSM1.png",
+        src: "./projectImages/school/CSM1.jpg",
         alt: "Home page of CSM",
       },
 
       video: {
         src: "./videos/csm.mp4",
-        poster: "./projectImages/school/CSM1.png",
+        poster: "./projectImages/school/CSM1.jpg",
       },
       id: "1",
       text: "CSM, was my first big project. We only had a month to do what we earlier had spend 2 months on. So my skills were getting tested. But i loved the challenge and in the end delivered a project i was really happy and proud of. We only used HTML and CSS for this one as well. In this Project my code is also much cleaner, which really shows how far you can get on a short time span.",
