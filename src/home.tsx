@@ -83,7 +83,7 @@ export const HomePage = () => {
 
   return (
     <div className="relative h-screen max-w-[1440px] overflow-hidden touch-pan-y">
-      <div className="hidden  fixed top-1/2 right-6 -translate-y-1/2 z-50 md:flex flex-col gap-3">
+      <div className="hidden fixed top-1/2 right-6 -translate-y-1/2 z-50 lg:flex flex-col gap-3">
         {sections.map((_, i) => (
           <button
             key={i}
