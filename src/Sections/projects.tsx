@@ -67,7 +67,7 @@ export const ProjectsSection = () => {
       {isSchool && (
         <div className="md:flex flex-col gap-2 hidden ">
           <h2 className="text-xl">School Projects</h2>
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-5 px-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-5">
             {school.map((project) => {
               return <ProjectCard project={project} />;
             })}

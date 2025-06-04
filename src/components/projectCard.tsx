@@ -38,8 +38,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           <p className="text-center text-lg">{project.name}</p>
         </div>
 
-        <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-gray-100 text-black rounded-md p-4 flex items-center justify-center text-center">
-          <p className="text-sm">{project.shortText}</p>
+        <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-leiDevBlue text-MatteBlack font-semibold rounded-md p-4 flex items-center justify-center text-center">
+          <p className="md:text-sm text-left lg:text-base">
+            {project.shortText}
+          </p>
         </div>
       </div>
     </button>
