@@ -1,8 +1,11 @@
 import { useContext, useEffect, useRef, useCallback } from "react";
 import { CommonContext } from "../types/context";
-import { X } from "lucide-react";
+import { Copy, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const ProjectModal = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const { projectModalOpen, setProjectModalOpen, selectedProject } =
     useContext(CommonContext);
 
@@ -10,7 +13,8 @@ export const ProjectModal = () => {
 
   const handleClose = useCallback(() => {
     setProjectModalOpen(false);
-  }, [setProjectModalOpen]);
+    navigate(location.pathname, { replace: true }); // Removes ?project=xyz
+  }, [navigate, location.pathname, setProjectModalOpen]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -19,6 +23,18 @@ export const ProjectModal = () => {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [handleClose]);
+
+  const handleCopyLink = async () => {
+    const projectId = selectedProject.id;
+    const url = `${window.location.origin}/Home?project=${projectId}`;
+
+    try {
+      await navigator.clipboard.writeText(url);
+      alert("Link copied to clipboard!");
+    } catch (err) {
+      console.error("Failed to copy!", err);
+    }
+  };
 
   return (
     <div
@@ -63,9 +79,14 @@ export const ProjectModal = () => {
               </div>
             )}
           </div>
-          <h2 className="text-xl  font-semibold">
-            {selectedProject?.name || "Project"}
-          </h2>
+          <div className="flex justify-between">
+            <h2 className="text-xl  font-semibold">
+              {selectedProject?.name || "Project"}
+            </h2>
+            <button onClick={handleCopyLink} className="hover-effect">
+              <Copy />
+            </button>
+          </div>
           <p className="border-y-[1px] border-leiDevBlue py-2 text-sm md:text-base">
             {selectedProject?.text || "More details coming soon."}
           </p>

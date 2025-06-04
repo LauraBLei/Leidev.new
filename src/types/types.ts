@@ -8,6 +8,8 @@ export type Project = {
   text: string;
   id: string;
   video: Video;
+  shortText: string;
+  fix: string;
 };
 
 export type Media = {
