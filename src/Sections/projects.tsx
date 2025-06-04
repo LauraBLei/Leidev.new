@@ -80,9 +80,9 @@ export const ProjectsSection = () => {
         </div>
       )}
       {isOther && (
-        <div className="max-w-[1400px] px-5 hidden md:flex flex-col gap-2">
+        <div className="md:flex flex-col gap-2 hidden">
           <h2 className="text-xl">Other Projects</h2>
-          <div className="flex gap-5 overflow-x-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-5">
             {other.map((project) => {
               return <ProjectCard project={project} />;
             })}

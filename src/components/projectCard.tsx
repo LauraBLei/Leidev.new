@@ -26,7 +26,6 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       className="group perspective w-full h-[320px] cursor-pointer"
     >
       <div className="relative w-full h-full transition-transform duration-500 transform-style preserve-3d group-hover:rotate-y-180">
-        {/* Front Side */}
         <div className="absolute w-full h-full backface-hidden rounded-md overflow-hidden">
           <div className="w-full h-[280px] flex items-center">
             <img
