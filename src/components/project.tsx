@@ -103,7 +103,9 @@ export const ProjectModal = () => {
           <div>
             <h3>Fixes:</h3>
             <p className="border-y-[1px] border-leiDevBlue py-2 text-sm md:text-base">
-              {selectedProject.fix}
+              {selectedProject.fix && (
+                <DescriptionCrop text={selectedProject.fix} limitNumber={200} />
+              )}
             </p>
           </div>
           <div className="my-2">
