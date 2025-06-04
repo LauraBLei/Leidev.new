@@ -21,6 +21,8 @@ const project = schoolProjects.projectData[0]
         poster: "",
       },
       id: "",
+      fix: "",
+      shortText: "",
       text: "",
     };
 
