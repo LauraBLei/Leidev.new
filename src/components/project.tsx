@@ -1,12 +1,14 @@
-import { useContext, useEffect, useRef, useCallback } from "react";
+import { useContext, useEffect, useRef, useCallback, useState } from "react";
+
 import { CommonContext } from "../types/context";
-import { Copy, X } from "lucide-react";
+import { Check, Copy, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { DescriptionCrop } from "./descriptionCrop";
 
 export const ProjectModal = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [copied, setCopied] = useState(false);
   const { projectModalOpen, setProjectModalOpen, selectedProject } =
     useContext(CommonContext);
 
@@ -31,12 +33,12 @@ export const ProjectModal = () => {
 
     try {
       await navigator.clipboard.writeText(url);
-      alert("Link copied to clipboard!");
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000); // Reset after 5 seconds
     } catch (err) {
       console.error("Failed to copy!", err);
     }
   };
-
   return (
     <div
       onClick={handleClose}
@@ -72,9 +74,18 @@ export const ProjectModal = () => {
             <h2 className="text-xl  font-semibold">
               {selectedProject?.name || "Project"}
             </h2>
-            <button onClick={handleCopyLink} className="hover-effect">
-              <Copy />
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick={handleCopyLink}
+                className={`hover-effect transition-colors duration-300 ${
+                  copied ? "text-green-500" : "text-leiDevBlue"
+                }`}
+                aria-label="Copy project link"
+              >
+                <Copy />
+              </button>
+              {copied && <Check className="text-green-500" />}
+            </div>
           </div>
           <div>
             <h3>Description:</h3>
