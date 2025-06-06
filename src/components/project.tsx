@@ -48,7 +48,7 @@ export const ProjectModal = () => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`bg-MatteBlack w-full md:max-w-[900px] max-h-[750px] md:max-h-[1200px] pt-5 overflow-y-auto rounded-xl transform transition-all duration-300 ${
+        className={`bg-MatteBlack w-full md:max-w-[900px] max-h-[750px] md:max-h-[1000px] pt-5 overflow-y-auto rounded-xl transform transition-all duration-300 ${
           projectModalOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
       >
