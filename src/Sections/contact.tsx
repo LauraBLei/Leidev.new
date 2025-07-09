@@ -29,6 +29,15 @@ export const ContactSection = () => {
           Your information will only be used to respond to your inquiry and will
           not be shared.
         </p>
+        <p className="text-sm mt-2">
+          Prefer email? You can also reach me directly at
+          <a
+            href="mailto:lei.dev@outlook.com"
+            className="text-leiDevBlue underline ml-1"
+          >
+            lei.dev@outlook.com
+          </a>
+        </p>
       </div>
       <form
         className="flex flex-col max-w-[800px] px-2 w-full gap-5"
