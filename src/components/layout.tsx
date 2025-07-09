@@ -4,7 +4,7 @@ import { ProjectModal } from "./project";
 
 export const Layout = () => {
   return (
-    <div className="bg-MatteBlack h-screen flex justify-center">
+    <div className="bg-MatteBlack flex justify-center">
       <ProjectModal />
       <Header />
       <Outlet />

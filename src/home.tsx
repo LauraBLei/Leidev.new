@@ -5,7 +5,7 @@ import { DevToolsSection } from "./Sections/dev-tools";
 
 export const HomePage = () => {
   return (
-    <div className=" h-auto max-w-[1440px] overflow-x-hidden flex flex-col gap-10 md:gap-20 lg:gap-40 touch-pan-y">
+    <div className=" max-w-[1440px] overflow-x-hidden  flex flex-col gap-10 md:gap-20 lg:gap-40 touch-pan-y">
       <section id="welcome" className="h-dvh">
         <WelcomeSection />
       </section>
