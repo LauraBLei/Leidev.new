@@ -70,7 +70,8 @@ export const Header = () => {
               {showNavContent && <NavList />}
             </div>
             <BsX
-              className="self-start text-4xl text-Beige mb-5 cursor-pointer mr-2 mt-2"
+              style={{ aspectRatio: "1 / 1" }}
+              className="self-start text-4xl border-1 border-Beige hover:border-MatteBlack hover-effect   hover:bg-MatteBlack rounded-full text-Beige mb-5 cursor-pointer mr-2 mt-2 p-1 w-12 h-12 min-w-[3rem] min-h-[3rem] flex-shrink-0 flex-grow-0"
               onClick={toggleMenu}
             />
           </div>
