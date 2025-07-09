@@ -8,7 +8,8 @@ import {
   BiLogoTypescript,
 } from "react-icons/bi";
 import { FaGitAlt, FaGithub } from "react-icons/fa";
-import { SiVite, SiVercel } from "react-icons/si";
+import { RiSupabaseFill } from "react-icons/ri";
+import { SiVite, SiVercel, SiNextdotjs } from "react-icons/si";
 
 export const WorkedWithTools = () => {
   return (
@@ -21,6 +22,15 @@ export const WorkedWithTools = () => {
       >
         <BiLogoJavascript className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Javascript</p>
+      </a>
+      <a
+        href="https://nextjs.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+      >
+        <SiNextdotjs className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
+        <p>Next.js</p>
       </a>
       <a
         href="https://www.typescriptlang.org/"
@@ -111,6 +121,15 @@ export const WorkedWithTools = () => {
       >
         <SiVercel className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Vercel</p>
+      </a>
+      <a
+        href="https://supabase.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+      >
+        <RiSupabaseFill className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
+        <p>Supabase</p>
       </a>
     </div>
   );

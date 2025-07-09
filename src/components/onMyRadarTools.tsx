@@ -1,4 +1,4 @@
-import { SiNextdotjs, SiGreensock, SiExpo, SiVuedotjs } from "react-icons/si";
+import { SiGreensock, SiExpo, SiVuedotjs } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaReact } from "react-icons/fa";
 import { MdOutlineStorage } from "react-icons/md";
@@ -7,15 +7,6 @@ import { RiNavigationLine } from "react-icons/ri";
 export const OnMyRadarTools = () => {
   return (
     <div className="flex flex-wrap max-w-[900px] gap-7 justify-center">
-      <a
-        href="https://nextjs.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
-      >
-        <SiNextdotjs className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
-        <p>Next.js</p>
-      </a>
       <a
         href="https://vuejs.org/"
         target="_blank"

@@ -92,7 +92,7 @@ export const ProjectModal = () => {
           </div>
           <div>
             <h3>Description:</h3>
-            <p className="border-y-[1px] border-leiDevBlue py-2 text-sm md:text-base">
+            <div className="border-y-[1px] border-leiDevBlue py-2 text-sm md:text-base">
               {selectedProject ? (
                 <DescriptionCrop
                   limitNumber={300}
@@ -101,14 +101,14 @@ export const ProjectModal = () => {
               ) : (
                 "More details coming soon."
               )}
-            </p>
+            </div>
           </div>
           {selectedProject.fix && selectedProject.fix.trim() !== "" && (
             <div>
               <h3>Fixes:</h3>
-              <p className="border-y-[1px] border-leiDevBlue py-2 text-sm md:text-base">
+              <div className="border-y-[1px] border-leiDevBlue py-2 text-sm md:text-base">
                 <DescriptionCrop text={selectedProject.fix} limitNumber={200} />
-              </p>
+              </div>
             </div>
           )}
           <div className="my-2">
