@@ -70,7 +70,7 @@ export const Header = () => {
               {showNavContent && <NavList />}
             </div>
             <BsX
-              className="self-start text-4xl mb-5 cursor-pointer mr-2 mt-2"
+              className="self-start text-4xl text-Beige mb-5 cursor-pointer mr-2 mt-2"
               onClick={toggleMenu}
             />
           </div>
