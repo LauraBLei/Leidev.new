@@ -65,3 +65,8 @@
     transform-origin: top right;
   }
 }
+
+input,
+textarea {
+  @apply border-1 border-leiDevBlue rounded-md p-2;
+}
