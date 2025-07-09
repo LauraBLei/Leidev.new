@@ -36,7 +36,7 @@ export const ProjectsSection = () => {
     }
   }, [searchParams, school, other, setProjectModalOpen, setSelectedProject]);
   return (
-    <div className="h-screen flex flex-col font-primary text-Beige gap-9 ">
+    <div className="flex flex-col font-primary text-Beige gap-9 ">
       <div className="w-full p-2 md:p-5 bg-leiDevBlue text-MatteBlack">
         <h1 className="headline">Projects</h1>
       </div>
