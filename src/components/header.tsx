@@ -80,7 +80,7 @@ export const Header = () => {
   );
 };
 
-const sectionIds = ["welcome", "projects", "about", "dev-tools"];
+const sectionIds = ["welcome", "projects", "about", "dev-tools", "contact"];
 
 const NavList = () => {
   const active = useActiveSection(sectionIds);

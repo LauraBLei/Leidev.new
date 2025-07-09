@@ -21,13 +21,19 @@ export const ContactInformation = () => {
           <FaGithub className="text-leiDevBlue w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
           <p>Github</p>
         </a>
-        <a
-          href="#contact"
+        <button
+          type="button"
           className="flex items-center gap-5 text-md md:text-lg hover-effect"
+          onClick={() => {
+            const el = document.getElementById("contact");
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
         >
           <FiMail className="text-leiDevBlue w-[25px] h-[25px] md:w-[35px] md:h-[35px]" />
           <p>Contact me</p>
-        </a>
+        </button>
       </div>
     </div>
   );
