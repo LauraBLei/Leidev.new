@@ -7,10 +7,14 @@ export const IntroPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate("/Home");
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timer); // Clean up on unmount
   }, [navigate]);
+
+  const handleLogoClick = () => {
+    navigate("/Home");
+  };
 
   return (
     <div className="flex w-full h-full items-center justify-center">
@@ -20,6 +24,7 @@ export const IntroPage = () => {
           className="cursor-pointer w-[99px] hover:scale-100 scale-95 transition ease-in-out duration-500 transform [animation:spin_3s_linear_infinite] "
           src="./Logo.png"
           alt=""
+          onClick={handleLogoClick}
         />
         Dev
       </div>

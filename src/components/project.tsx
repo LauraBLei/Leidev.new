@@ -57,8 +57,11 @@ export const ProjectModal = () => {
           className="pt-10 pb-16 px-5 flex flex-col gap-5 dark:bg-dark font-primary text-leiDevBlue w-full
           "
         >
-          <button onClick={handleClose} className="flex w-full justify-end">
-            <X className="hover-effect w-6 h-6 md:w-10 md:h-10 mt-[-20px] mb-[20px]" />
+          <button
+            onClick={handleClose}
+            className="flex w-full justify-end hover:text-Beige items-center mt-[-20px] mb-[20px]"
+          >
+            <X className="hover-effect e w-6 h-6 md:w-10 md:h-10 border-1 rounded-full p-1" />
             <p className="sr-only">Close</p>
           </button>
           <div>
