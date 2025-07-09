@@ -103,14 +103,14 @@ export const ProjectModal = () => {
               )}
             </p>
           </div>
-          <div>
-            <h3>Fixes:</h3>
-            <p className="border-y-[1px] border-leiDevBlue py-2 text-sm md:text-base">
-              {selectedProject.fix && (
+          {selectedProject.fix && selectedProject.fix.trim() !== "" && (
+            <div>
+              <h3>Fixes:</h3>
+              <p className="border-y-[1px] border-leiDevBlue py-2 text-sm md:text-base">
                 <DescriptionCrop text={selectedProject.fix} limitNumber={200} />
-              )}
-            </p>
-          </div>
+              </p>
+            </div>
+          )}
           <div className="my-2">
             <h2 className="font-semibold">Dev Tools</h2>
             <div className="border-[1px] border-leiDevBlue rounded-md py-2 flex justify-evenly flex-wrap gap-5">
