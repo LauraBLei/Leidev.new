@@ -28,7 +28,6 @@ const project = schoolProjects.projectData[0]
 
 export const DataProvider = ({ children }: ContextProviderProps) => {
   const [headerOpen, setHeaderOpen] = useState(false);
-
   const [projectModalOpen, setProjectModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project>(project);
 

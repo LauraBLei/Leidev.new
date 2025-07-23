@@ -28,13 +28,18 @@ export const ProjectModal = () => {
   }, [handleClose]);
 
   const handleCopyLink = async () => {
+    if (!selectedProject?.id) {
+      console.error("No project selected or project ID missing");
+      return;
+    }
+
     const projectId = selectedProject.id;
     const url = `${window.location.origin}/Home?project=${projectId}`;
 
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
-      setTimeout(() => setCopied(false), 3000); // Reset after 5 seconds
+      setTimeout(() => setCopied(false), 3000);
     } catch (err) {
       console.error("Failed to copy!", err);
     }
@@ -42,7 +47,7 @@ export const ProjectModal = () => {
   return (
     <div
       onClick={handleClose}
-      className={`fixed z-50 bg-black/50 h-screen w-full flex items-center justify-center transition-opacity duration-300 ${
+      className={`fixed top-0 left-0 z-[9999] bg-black/70 h-screen w-full flex items-center justify-center transition-opacity duration-300 ${
         projectModalOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
@@ -68,8 +73,12 @@ export const ProjectModal = () => {
             <div className="w-full rounded-xl max-h-[354px] overflow-hidden mb-4 shadow-lg shadow-Onyx ">
               <img
                 className="w-full  h-full  object-cover"
-                src={selectedProject?.video.poster}
-                alt={selectedProject?.name}
+                src={
+                  selectedProject?.video?.poster ||
+                  selectedProject?.image?.src ||
+                  "./placeholder.jpg"
+                }
+                alt={selectedProject?.name || "Project image"}
               />
             </div>
           </div>
