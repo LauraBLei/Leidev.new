@@ -37,9 +37,8 @@ export const ProjectsSection = () => {
   }, [searchParams, school, other, setProjectModalOpen, setSelectedProject]);
   return (
     <div className="flex flex-col font-primary text-Beige gap-9 ">
-      <div className="w-full p-2 md:p-5 bg-leiDevBlue text-MatteBlack">
-        <h1 className="headline">Projects</h1>
-      </div>
+      <h1 className="headline">Projects</h1>
+
       <div className="relative flex rounded-full  justify-between  w-full">
         <div
           id="movingSlider"
@@ -49,7 +48,7 @@ export const ProjectsSection = () => {
         ></div>
         <button
           className={` py-2 flex-1 cursor-pointer hover-effect ${
-            isSchool ? " text-MatteBlack font-semibold" : "text-white"
+            isSchool ? " text-Beige font-semibold" : "text-MatteBlack"
           }`}
           onClick={() => setProject("school")}
         >
@@ -57,7 +56,7 @@ export const ProjectsSection = () => {
         </button>
         <button
           className={` py-2 flex-1 cursor-pointer hover-effect ${
-            isOther ? " text-MatteBlack font-semibold" : "text-white"
+            isOther ? " text-Beige font-semibold" : "text-MatteBlack"
           }`}
           onClick={() => setProject("other")}
         >
@@ -67,7 +66,7 @@ export const ProjectsSection = () => {
       {isSchool && (
         <div className="md:flex flex-col gap-2 hidden ">
           <h2 className="text-xl">School Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 px-5">
             {school.map((project, i) => {
               return <ProjectCard key={i} project={project} />;
             })}
@@ -82,7 +81,7 @@ export const ProjectsSection = () => {
       {isOther && (
         <div className="md:flex flex-col gap-2 hidden">
           <h2 className="text-xl">Other Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 px-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 px-5">
             {other.map((project, i) => {
               return <ProjectCard key={i} project={project} />;
             })}

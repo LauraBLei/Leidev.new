@@ -22,7 +22,7 @@ export const AboutOnPhone = () => {
         ></div>
         <button
           className={` py-2 flex-1 cursor-pointer hover-effect ${
-            isTextOne ? " text-MatteBlack font-semibold" : "text-white"
+            isTextOne ? " text-Beige font-semibold" : "text-MatteBlack"
           }`}
           onClick={() => setText("textOne")}
         >
@@ -30,7 +30,7 @@ export const AboutOnPhone = () => {
         </button>
         <button
           className={` py-2 flex-1 cursor-pointer hover-effect ${
-            isTextTwo ? " text-MatteBlack font-semibold" : "text-white"
+            isTextTwo ? " text-Beige font-semibold" : "text-MatteBlack"
           }`}
           onClick={() => setText("textTwo")}
         >
@@ -39,7 +39,7 @@ export const AboutOnPhone = () => {
       </div>
       <div>
         {isTextOne ? (
-          <div className="text-sm md:text-base text-white p-2 flex flex-col gap-2">
+          <div className="text-sm md:text-base text-MatteBlack p-2 flex flex-col gap-2">
             <p>My name is Laura, and i am based in Bergen, Norway.</p>
             <p>
               I thrive working in a team or by myself, i love to debate and
@@ -55,7 +55,7 @@ export const AboutOnPhone = () => {
                 “The will to want creates the ability to act”
               </p>
             </div>
-            <p>
+            <p className="text-MatteBlack">
               My father lived by this mindset. It’s shaped how I learn, grow,
               and take on challenges. His quiet strength drives my dedication
               and the way I approach every project—with purpose and heart.

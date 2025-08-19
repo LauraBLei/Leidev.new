@@ -1,7 +1,7 @@
 export const AboutOnDesktop = () => {
   return (
     <div className="flex flex-col ">
-      <div className="flex">
+      <div className="flex gap-5">
         <div className="overflow-hidden h-[464px] w-full flex-1 flex items-center ">
           <img
             className="w-full h-full object-cover"
@@ -9,7 +9,7 @@ export const AboutOnDesktop = () => {
             alt="Image of me, Laura Lei"
           />
         </div>
-        <div className="text-white  font-primary p-2 flex flex-col gap-5 pr-5 flex-1">
+        <div className="text-MatteBlack  font-primary p-2 flex flex-col gap-5 pr-5 flex-1">
           <p className="text-xl">
             My name is Laura, and i'm based in Bergen, Norway.
           </p>
@@ -25,9 +25,9 @@ export const AboutOnDesktop = () => {
           </p>
         </div>
       </div>
-      <div className="text-lg text-white mt-5">
+      <div className="text-lg text-MatteBlack mt-5">
         <div className="bg-Onyx border-l-4 border-leiDevBlue shadow-md px-3 py-2 md:py-3 my-2">
-          <p className="text-2xl italic text-center">
+          <p className="text-2xl text-Beige italic text-center">
             “The will to want creates the ability to act”
           </p>
         </div>

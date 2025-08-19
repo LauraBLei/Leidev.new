@@ -11,7 +11,7 @@ export const OnMyRadarTools = () => {
         href="https://vuejs.org/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <SiVuedotjs className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Vue.js</p>
@@ -20,7 +20,7 @@ export const OnMyRadarTools = () => {
         href="https://greensock.com/gsap/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <SiGreensock className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>GSAP</p>
@@ -29,7 +29,7 @@ export const OnMyRadarTools = () => {
         href="https://www.framer.com/motion/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <TbBrandFramerMotion className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Framer Motion</p>
@@ -38,7 +38,7 @@ export const OnMyRadarTools = () => {
         href="https://reactnative.dev/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <FaReact className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>React Native</p>
@@ -47,7 +47,7 @@ export const OnMyRadarTools = () => {
         href="https://expo.dev/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <SiExpo className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Expo</p>
@@ -56,7 +56,7 @@ export const OnMyRadarTools = () => {
         href="https://reactnavigation.org/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <RiNavigationLine className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>React Navigation</p>
@@ -65,7 +65,7 @@ export const OnMyRadarTools = () => {
         href="https://react-native-async-storage.github.io/async-storage/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <MdOutlineStorage className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>AsyncStorage</p>

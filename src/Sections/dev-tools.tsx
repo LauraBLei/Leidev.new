@@ -4,17 +4,16 @@ import { WorkedWithTools } from "../components/workedWithTools";
 export const DevToolsSection = () => {
   return (
     <div className="flex flex-col items-center">
-      <div className="w-full p-2 md:p-5 mb-5 md:mb-12 bg-leiDevBlue text-MatteBlack">
-        <h1 className="headline">Dev-Tools</h1>
-      </div>
+      <h1 className="headline mb-5">Dev-Tools</h1>
+
       <div className="mb-10">
-        <h2 className="px-2 text-base md:text-xl text-leiDevBlue py-2 border-b-[1px] mb-5">
+        <h2 className="px-2 text-base md:text-xl text-MatteBlack py-2 border-b-[1px] mb-5">
           Tools i have worked with:
         </h2>
         <WorkedWithTools />
       </div>
       <div className="mb-5">
-        <h2 className=" px-2 text-base md:text-xl text-leiDevBlue py-2 border-b-[1px] mb-5">
+        <h2 className=" px-2 text-base md:text-xl text-MatteBlack py-2 border-b-[1px] mb-5">
           On My Radar:
         </h2>
         <OnMyRadarTools />

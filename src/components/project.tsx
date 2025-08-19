@@ -27,6 +27,34 @@ export const ProjectModal = () => {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [handleClose]);
 
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (projectModalOpen) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restore scroll position
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+    };
+  }, [projectModalOpen]);
+
   const handleCopyLink = async () => {
     if (!selectedProject?.id) {
       console.error("No project selected or project ID missing");
@@ -53,7 +81,7 @@ export const ProjectModal = () => {
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className={`bg-MatteBlack w-full md:max-w-[900px] md:pb-20 lg:pb-0 max-h-[750px] md:max-h-[1000px] pt-5 overflow-y-auto rounded-xl transform transition-all duration-300 ${
+        className={`bg-Beige w-full md:max-w-[900px] md:pb-20 lg:pb-0 max-h-[750px] md:max-h-[1000px] pt-5 overflow-y-auto rounded-xl transform transition-all duration-300 ${
           projectModalOpen ? "scale-100 opacity-100" : "scale-95 opacity-0"
         }`}
       >
@@ -64,7 +92,7 @@ export const ProjectModal = () => {
         >
           <button
             onClick={handleClose}
-            className="flex w-full justify-end hover:text-Beige items-center mt-[-20px] mb-[20px]"
+            className="flex w-full justify-end hover:text-MatteBlack items-center mt-[-20px] mb-[20px]"
           >
             <X className="hover-effect e w-6 h-6 md:w-10 md:h-10 border-1 rounded-full p-1" />
             <p className="sr-only">Close</p>
@@ -135,7 +163,7 @@ export const ProjectModal = () => {
               href={selectedProject?.["repo-link"]}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md text-center bg-leiDevBlue text-MatteBlack font-semibold shadow-md py-2 flex-1 hover-effect"
+              className="rounded-md text-center bg-leiDevBlue text-Beige font-semibold shadow-md py-2 flex-1 hover-effect"
             >
               Repository
             </a>
@@ -143,7 +171,7 @@ export const ProjectModal = () => {
               href={selectedProject?.["livepage-link"]}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md text-center  bg-leiDevBlue text-MatteBlack font-semibold shadow-md py-2 flex-1 hover-effect"
+              className="rounded-md text-center  bg-leiDevBlue text-Beige font-semibold shadow-md py-2 flex-1 hover-effect"
             >
               Live Pages
             </a>

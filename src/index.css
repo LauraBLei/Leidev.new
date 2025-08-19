@@ -2,7 +2,7 @@
 
 @theme {
   --font-primary: "Courier Prime", monospace;
-  --color-leiDevBlue: #5d8ea4;
+  --color-leiDevBlue: #335c6e;
   --color-Onyx: #353839;
   --color-MatteBlack: #282828;
   --color-Beige: #faf9f6;
@@ -26,7 +26,7 @@
 }
 
 .headline {
-  @apply font-primary text-base md:text-xl lg:text-2xl;
+  @apply font-primary text-base md:text-xl lg:text-2xl w-full p-4 rounded-sm bg-leiDevBlue  text-Beige flex justify-between;
 }
 
 @layer utilities {

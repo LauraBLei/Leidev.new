@@ -73,10 +73,7 @@ export const ImageCarousel = ({ projects }: CarouselProps) => {
           />
         </div>
 
-        {name && <p className="text-center">{name}</p>}
-        <p className="text-sm p-2 border-y-[1px] border-leiDevBlue ">
-          {currentProject.shortText}
-        </p>
+        {name && <p className="text-center text-Beige bg-leiDevBlue">{name}</p>}
 
         {!isSingleItem && (
           <>
