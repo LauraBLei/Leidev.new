@@ -3,7 +3,7 @@ import { FiMail } from "react-icons/fi";
 
 export const ContactInformation = () => {
   return (
-    <div className="font-primary text-Beige">
+    <div className="font-primary ">
       <div className=" max-w-[1400px] flex flex-wrap  md:justify-evenly gap-10 mt-5">
         <a
           target="_blanc"

@@ -18,7 +18,7 @@ export const WorkedWithTools = () => {
         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <BiLogoJavascript className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Javascript</p>
@@ -27,7 +27,7 @@ export const WorkedWithTools = () => {
         href="https://nextjs.org/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <SiNextdotjs className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Next.js</p>
@@ -36,7 +36,7 @@ export const WorkedWithTools = () => {
         href="https://www.typescriptlang.org/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <BiLogoTypescript className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Typescript</p>
@@ -45,7 +45,7 @@ export const WorkedWithTools = () => {
         href="https://developer.mozilla.org/en-US/docs/Web/CSS"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <BiLogoCss3 className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>CSS</p>
@@ -54,7 +54,7 @@ export const WorkedWithTools = () => {
         href="https://tailwindcss.com/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <BiLogoTailwindCss className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Tailwind CSS</p>
@@ -63,7 +63,7 @@ export const WorkedWithTools = () => {
         href="https://react.dev/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <BiLogoReact className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>React</p>
@@ -72,7 +72,7 @@ export const WorkedWithTools = () => {
         href="https://developer.mozilla.org/en-US/docs/Web/HTML"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <BiLogoHtml5 className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>HTML</p>
@@ -81,7 +81,7 @@ export const WorkedWithTools = () => {
         href="https://nodejs.org/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <BiLogoNodejs className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Node.js</p>
@@ -90,7 +90,7 @@ export const WorkedWithTools = () => {
         href="https://git-scm.com/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <FaGitAlt className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Git</p>
@@ -99,7 +99,7 @@ export const WorkedWithTools = () => {
         href="https://github.com/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <FaGithub className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>GitHub</p>
@@ -108,7 +108,7 @@ export const WorkedWithTools = () => {
         href="https://vitejs.dev/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <SiVite className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Vite</p>
@@ -117,7 +117,7 @@ export const WorkedWithTools = () => {
         href="https://vercel.com/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <SiVercel className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Vercel</p>
@@ -126,7 +126,7 @@ export const WorkedWithTools = () => {
         href="https://supabase.com/"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center text-sm md:text-lg text-Beige gap-2 hover-effect hover:text-leiDevBlue"
+        className="flex items-center text-sm md:text-lg text-MatteBlack gap-2 hover-effect hover:text-leiDevBlue"
       >
         <RiSupabaseFill className="w-[20px] h-[20px] md:w-[40px] md:h-[40px]" />
         <p>Supabase</p>

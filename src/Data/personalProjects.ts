@@ -24,6 +24,25 @@ export const personalProjects: personalProjects = {
   },
   projectData: [
     {
+      name: "FMK Gulve",
+      "web development tools": ["Next.js", "React", "Typescript"],
+      "completion date": "18. august 2025",
+      "repo-link": "https://github.com/LauraBLei/fmkgulve",
+      "livepage-link": "https://fmkgulve.vercel.app/da",
+      image: {
+        src: "./projectImages/personal/fmkgulve.png",
+        alt: "fmkgulve website, front page",
+      },
+      video: {
+        src: "",
+        poster: "",
+      },
+      id: "03",
+      fix: "",
+      text: "A comprehensive, multilingual business website originally developed for a Danish flooring company, now showcased as a portfolio demonstration. This project highlights modern web development practices with a focus on internationalization, responsive design, and professional user experience.",
+      shortText: "",
+    },
+    {
       name: "Wedding",
       "web development tools": [
         "React",

@@ -5,10 +5,9 @@ export const ContactSection = () => {
   const maxChars = 500;
 
   return (
-    <div className="flex flex-col  font-primary items-center w-full  text-Beige gap-10">
-      <div className="w-full p-2 md:p-5 bg-leiDevBlue text-MatteBlack">
-        <h1 className="headline">Contact</h1>
-      </div>
+    <div className="flex flex-col  font-primary items-center w-full  text-MatteBlack gap-10">
+      <h1 className="headline">Contact</h1>
+
       <div className="w-[120px]  h-[120px] md:w-[200px] md:h-[200px] mx-auto flex items-center justify-center">
         <img
           className="w-full h-full object-cover rounded-full border-2 border-leiDevBlue shadow-lg"
@@ -25,7 +24,7 @@ export const ContactSection = () => {
         <p className="text-sm text-leiDevBlue">
           I usually respond within 1-2 business days.
         </p>
-        <p className="text-xs text-gray-400">
+        <p className="text-xs text-MatteBlack">
           Your information will only be used to respond to your inquiry and will
           not be shared.
         </p>
@@ -73,7 +72,7 @@ export const ContactSection = () => {
 
         <button
           type="submit"
-          className="py-2 px-6  rounded-md bg-leiDevBlue hover-effect text-MatteBlack font-semibold text-lg"
+          className="py-2 px-6  rounded-md bg-leiDevBlue hover-effect text-Beige font-semibold text-lg"
         >
           Send Message
         </button>

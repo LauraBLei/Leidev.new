@@ -47,8 +47,8 @@ export const Header = () => {
   }, [headerOpen, toggleMenu]);
 
   return (
-    <header className="fixed z-40 top-0 flex items-center justify-between w-full px-5 py-2 bg-MatteBlack">
-      <img className="w-14 md:w-20" src="./Logo.png" alt="LeiDev Logo" />
+    <header className="fixed z-40 top-0 flex items-center justify-between w-full px-5 py-2 ">
+      <img className="w-44" src="./logo.png" alt="LeiDev Logo" />
 
       <div className="">
         <RxHamburgerMenu
