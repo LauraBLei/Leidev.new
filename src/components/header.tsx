@@ -47,7 +47,7 @@ export const Header = () => {
   }, [headerOpen, toggleMenu]);
 
   return (
-    <header className="fixed z-40 top-0 flex items-center justify-between w-full px-5 py-2 ">
+    <header className="fixed bg-Beige shadow-md z-40 top-0 flex items-center justify-between w-full px-5 py-2 ">
       <img className="w-44" src="./Logo.png" alt="LeiDev Logo" />
 
       <div className="">
