@@ -23,7 +23,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
     <button
       onClick={handleClick}
       id={project.id}
-      className="w-full h-[320px] cursor-pointer hover:scale-105 transition-transform duration-300"
+      className="w-full h-[320px] cursor-pointer shadow-md hover:scale-105 transition-transform duration-300"
     >
       <div className="w-full h-full rounded-md overflow-hidden">
         <div className="w-full h-[280px] flex items-center">

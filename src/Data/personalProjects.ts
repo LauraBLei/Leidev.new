@@ -81,12 +81,12 @@ export const personalProjects: personalProjects = {
       "repo-link": "https://github.com/LauraBLei/Wedding",
       "livepage-link": "https://wedding.leidev.net/",
       image: {
-        src: "./projectImages/personal/wedding1.jpg",
+        src: "./projectImages/personal/wedding.png",
         alt: "Wedding page",
       },
       video: {
         src: "",
-        poster: "./projectImages/personal/wedding1.jpg",
+        poster: "./projectImages/personal/wedding.png",
       },
       id: "02",
       fix: "",
