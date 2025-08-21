@@ -36,7 +36,7 @@ export const personalProjects: personalProjects = {
       "repo-link": "https://github.com/LauraBLei/plateful",
       "livepage-link": "https://plateful.leidev.net/",
       image: {
-        src: "./projectImages/personal/fmkgulve.png",
+        src: "./projectImages/personal/plateful.png",
         alt: "Plateful website, home page",
       },
       video: {
