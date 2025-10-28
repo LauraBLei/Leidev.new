@@ -1,12 +1,8 @@
 import { Outlet } from "react-router";
-import { Header } from "./header";
-import { ProjectModal } from "./project";
 
 export const Layout = () => {
   return (
-    <div className="bg-Beige  flex justify-center flex-col items-center ">
-      <ProjectModal />
-      <Header />
+    <div className="bg-Beige h-screen flex justify-center flex-col items-center ">
       <Outlet />
     </div>
   );
