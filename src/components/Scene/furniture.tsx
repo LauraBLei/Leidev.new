@@ -1,5 +1,5 @@
 import { BlenderObject } from "../model";
-import { FrameOne, FrameTwo } from "./Frames/Models";
+import { Board, FrameOne, FrameTwo } from "./Frames/Models";
 
 export const Furniture = ({ FloorHeight }: { FloorHeight: number }) => {
   return (
@@ -29,6 +29,7 @@ export const WallArt = () => {
     <group>
       <FrameOne />
       <FrameTwo />
+      <Board />
     </group>
   );
 };

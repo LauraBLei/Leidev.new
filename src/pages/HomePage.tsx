@@ -1,10 +1,11 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Sky } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
 import { Floor } from "../components/Scene/Floor";
 import { Walls } from "../components/Scene/Walls";
 import { Furniture, WallArt } from "../components/Scene/furniture";
 import { Fireplace } from "../components/Scene/fireplace";
 import { BlenderObject } from "../components/model";
+import { CameraController } from "../components/CameraController";
 
 export const HomePage = () => {
   return (
@@ -31,7 +32,7 @@ const App = () => {
       />
       <ambientLight intensity={1} />
       <directionalLight position={[0, 5, 5]} />
-      <OrbitControls />
+      <CameraController />
       <Sky />
     </>
   );
