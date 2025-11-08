@@ -1,7 +1,7 @@
-import { useRef, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const useVideo = (src: string, autoplay: boolean) => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [video, setVideo] = useState<HTMLVideoElement | null>();
 
   useEffect(() => {
     const video = document.createElement("video");
@@ -12,8 +12,8 @@ export const useVideo = (src: string, autoplay: boolean) => {
     video.crossOrigin = "Anonymous";
     video.playsInline = true;
     video.play();
-    videoRef.current = video;
+    setVideo(video);
   }, []);
 
-  return videoRef;
+  return video;
 };

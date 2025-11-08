@@ -9,9 +9,7 @@ type VideoPlaneProps = {
 export const VideoPlane = ({ src, position }: VideoPlaneProps) => {
   const videoRef = useVideo(src, true);
 
-  const texture = videoRef.current
-    ? new THREE.VideoTexture(videoRef.current)
-    : null;
+  const texture = videoRef ? new THREE.VideoTexture(videoRef) : null;
 
   return (
     <mesh position={position}>

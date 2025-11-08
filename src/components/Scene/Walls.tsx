@@ -39,6 +39,11 @@ export const Walls = ({ FloorHeight }: { FloorHeight: number }) => {
         scale={2}
         rotation={[0, Math.PI / 2, 0]}
       />
+      <BlenderObject
+        src="/models/roof.glb"
+        scale={2}
+        position={[0, -1.05, 1]}
+      />
     </group>
   );
 };
