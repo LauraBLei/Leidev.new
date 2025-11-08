@@ -1,7 +1,8 @@
 import { useThree, useFrame } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { useCameraContext } from "../context/CameraContext";
+import { CameraPresets } from "../hooks/CameraPositions";
 
 export const CameraController = () => {
   const { camera } = useThree();
@@ -10,23 +11,56 @@ export const CameraController = () => {
     new THREE.Vector3(...camera.position.toArray())
   );
   const targetLookAt = useRef(new THREE.Vector3(0, 0, 0));
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if we're at the start position
+  const isAtStartPosition =
+    cameraPreset.position[0] === CameraPresets.Start.position[0] &&
+    cameraPreset.position[1] === CameraPresets.Start.position[1] &&
+    cameraPreset.position[2] === CameraPresets.Start.position[2];
+
+  // Detect mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768 || "ontouchstart" in window);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     if (cameraPreset) {
-      targetPosition.current.set(...cameraPreset.position);
+      const adjustedPosition = [...cameraPreset.position] as [
+        number,
+        number,
+        number,
+      ];
+
+      // On mobile, zoom out a bit for frames (not at start position)
+      if (isMobile && !isAtStartPosition) {
+        // Move camera back along Z axis (adjust the value as needed)
+        adjustedPosition[2] = adjustedPosition[2] + 0.2;
+      }
+
+      targetPosition.current.set(...adjustedPosition);
       targetLookAt.current.set(...cameraPreset.lookAt);
     }
-  }, [cameraPreset]);
+  }, [cameraPreset, isMobile, isAtStartPosition]);
 
   useFrame(() => {
     // Smoothly interpolate camera position
     camera.position.lerp(targetPosition.current, 0.03);
-    // Smoothly interpolate lookAt
-    const currentLookAt = new THREE.Vector3();
-    camera.getWorldDirection(currentLookAt);
-    currentLookAt.add(camera.position);
-    currentLookAt.lerp(targetLookAt.current, 0.1);
-    camera.lookAt(currentLookAt);
+
+    // On desktop: always control lookAt
+    // On mobile: control lookAt EXCEPT when at Start position (where MobileCameraControls takes over)
+    if (!isMobile || !isAtStartPosition) {
+      const currentLookAt = new THREE.Vector3();
+      camera.getWorldDirection(currentLookAt);
+      currentLookAt.add(camera.position);
+      currentLookAt.lerp(targetLookAt.current, 0.1);
+      camera.lookAt(currentLookAt);
+    }
   });
 
   return null;
