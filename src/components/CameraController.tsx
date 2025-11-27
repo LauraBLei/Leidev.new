@@ -48,18 +48,21 @@ export const CameraController = () => {
     }
   }, [cameraPreset, isMobile, isAtStartPosition]);
 
+  // Store the current lookAt target for smooth interpolation
+  const currentLookAtRef = useRef(
+    new THREE.Vector3(...targetLookAt.current.toArray())
+  );
+
   useFrame(() => {
-    // Smoothly interpolate camera position
-    camera.position.lerp(targetPosition.current, 0.03);
+    // Smoothly interpolate camera position (lower value = slower/smoother)
+    camera.position.lerp(targetPosition.current, 0.02);
 
     // On desktop: always control lookAt
     // On mobile: control lookAt EXCEPT when at Start position (where MobileCameraControls takes over)
     if (!isMobile || !isAtStartPosition) {
-      const currentLookAt = new THREE.Vector3();
-      camera.getWorldDirection(currentLookAt);
-      currentLookAt.add(camera.position);
-      currentLookAt.lerp(targetLookAt.current, 0.1);
-      camera.lookAt(currentLookAt);
+      // Smoothly interpolate lookAt target (match position speed for natural movement)
+      currentLookAtRef.current.lerp(targetLookAt.current, 0.02);
+      camera.lookAt(currentLookAtRef.current);
     }
   });
 
