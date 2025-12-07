@@ -1,45 +1,34 @@
-import { Canvas } from "@react-three/fiber";
-import { Floor } from "../components/Scene/Floor";
-import { Walls } from "../components/Scene/Walls";
-import {
-  Decorations,
-  Furniture,
-  Lamps,
-  WallArt,
-} from "../components/Scene/furniture";
-import { Fireplace } from "../components/Scene/fireplace";
-import { BlenderObject } from "../components/model";
-import { CameraController } from "../components/CameraController";
-import { MobileCameraControls } from "../components/MobileCameraControls";
+import { useNavigate } from "react-router";
 
 export const HomePage = () => {
-  return (
-    <Canvas>
-      <App />
-    </Canvas>
-  );
-};
-const FloorHeight = -1.086;
-const App = () => {
-  // reference to the three object
+  const navigate = useNavigate();
 
   return (
-    <>
-      <Fireplace />
-      <Floor FloorHeight={FloorHeight} />
-      <Walls FloorHeight={FloorHeight} />
-      <Furniture FloorHeight={FloorHeight} />
-      <WallArt />
-      <Lamps />
-      <Decorations />
-      <BlenderObject
-        src="/models/MARLEY.glb"
-        position={[-2.5, -0.27, 1]}
-        rotation={[0, Math.PI / 6, 0]}
-      />
-      <directionalLight position={[0, 5, 5]} />
-      <CameraController />
-      <MobileCameraControls />
-    </>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        gap: "2rem",
+      }}
+    >
+      <h1>Home Page</h1>
+      <button
+        onClick={() => navigate("/3d")}
+        style={{
+          padding: "1rem 2rem",
+          fontSize: "1.2rem",
+          cursor: "pointer",
+          backgroundColor: "#007bff",
+          color: "white",
+          border: "none",
+          borderRadius: "4px",
+        }}
+      >
+        View 3D Scene
+      </button>
+    </div>
   );
 };
