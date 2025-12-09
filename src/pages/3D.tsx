@@ -39,8 +39,10 @@ const Scene = () => {
 
 export const ThreeDPage = () => {
   return (
-    <Canvas>
-      <Scene />
-    </Canvas>
+    <div className="w-full h-screen text-MatteBlack">
+      <Canvas>
+        <Scene />
+      </Canvas>
+    </div>
   );
 };

@@ -36,7 +36,8 @@ export type ToolKey =
   | "html"
   | "css"
   | "three"
-  | "blender";
+  | "blender"
+  | "supabase";
 
 export const TOOLS: Record<ToolKey, { name: string; src: string }> = {
   react: { name: "React", src: "/tools/react.svg" },
@@ -53,4 +54,5 @@ export const TOOLS: Record<ToolKey, { name: string; src: string }> = {
   css: { name: "CSS", src: "/tools/css.svg" },
   three: { name: "Three.js", src: "/tools/threedotjs.svg" },
   blender: { name: "Blender", src: "/tools/blender.svg" },
+  supabase: { name: "Supabase", src: "/tools/supabase.svg" },
 };

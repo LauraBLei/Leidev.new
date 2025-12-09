@@ -1,5 +1,4 @@
-import { Project } from "../types/types";
-import { ToolBoxIcon } from "./tool";
+import { Project, TOOLS } from "../types/types";
 
 export const ProjectCard = (project: Project) => {
   return (
@@ -37,7 +36,16 @@ export const ProjectCard = (project: Project) => {
         <div className="flex gap-2 border-y border-MatteBlack py-2 flex-wrap items-center">
           <p className="font-semibold">ToolBox:</p>
           {project["web development tools"].map((tool) => {
-            return <ToolBoxIcon key={tool} tool={tool} />;
+            const toolData = TOOLS[tool];
+            return (
+              <div key={tool} title={toolData.name}>
+                <img
+                  src={toolData.src}
+                  alt={toolData.name}
+                  className="w-6 h-6"
+                />
+              </div>
+            );
           })}
         </div>
       </div>
