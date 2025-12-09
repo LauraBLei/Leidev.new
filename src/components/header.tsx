@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const SECTIONS = ["welcome", "projects", "about", "toolbox", "contact"];
+const SECTIONS = ["projects", "about", "toolbox", "contact"];
 
 export const Header = () => {
   const [active, setActive] = useState("welcome");
@@ -25,16 +25,21 @@ export const Header = () => {
 
   return (
     <header className="w-full text-MatteBlack flex justify-center sticky top-0 z-50">
-      <nav className="absolute  bg-Beige rounded-b-2xl flex gap-5 py-2 px-5 shadow-md">
-        {SECTIONS.map((id) => (
-          <button
-            key={id}
-            onClick={() => handleScroll(id)}
-            className={`navElement ${active === id ? "active" : ""}`}
-          >
-            {id.charAt(0).toUpperCase() + id.slice(1)}
-          </button>
-        ))}
+      <nav className="absolute  bg-Beige rounded-b-2xl flex gap-5 pt-2 pb-3 px-5 shadow-md flex-col items-center">
+        <button onClick={() => handleScroll("welcome")}>
+          <img className="w-40 cursor-pointer" src="/Logo.png" alt="Logo" />
+        </button>
+        <div className="flex gap-2">
+          {SECTIONS.map((id) => (
+            <button
+              key={id}
+              onClick={() => handleScroll(id)}
+              className={`navElement ${active === id ? "active" : ""}`}
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1)}
+            </button>
+          ))}
+        </div>
       </nav>
     </header>
   );
