@@ -1,4 +1,4 @@
-import { useVideo } from "../hooks/useVideo";
+import { useVideo } from "../../hooks/useVideo";
 import * as THREE from "three";
 
 type VideoPlaneProps = {

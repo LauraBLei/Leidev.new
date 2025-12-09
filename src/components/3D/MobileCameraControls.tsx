@@ -1,8 +1,8 @@
 import { useThree, useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import { useCameraContext } from "../context/CameraContext";
-import { CameraPresets } from "../hooks/CameraPositions";
+import { useCameraContext } from "../../context/CameraContext";
+import { CameraPresets } from "../../hooks/CameraPositions";
 
 export const MobileCameraControls = () => {
   const { camera, gl } = useThree();

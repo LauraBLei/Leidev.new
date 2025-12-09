@@ -1,16 +1,17 @@
 import { Canvas } from "@react-three/fiber";
-import { Floor } from "../components/Scene/Floor";
-import { Walls } from "../components/Scene/Walls";
+
+import { BlenderObject } from "../components/3D/model";
+import { CameraController } from "../components/3D/CameraController";
+import { MobileCameraControls } from "../components/3D/MobileCameraControls";
 import {
   Decorations,
   Furniture,
   Lamps,
   WallArt,
-} from "../components/Scene/furniture";
-import { Fireplace } from "../components/Scene/fireplace";
-import { BlenderObject } from "../components/model";
-import { CameraController } from "../components/CameraController";
-import { MobileCameraControls } from "../components/MobileCameraControls";
+} from "../components/3D/Scene/furniture";
+import { Fireplace } from "../components/3D/Scene/fireplace";
+import { Floor } from "../components/3D/Scene/Floor";
+import { Walls } from "../components/3D/Scene/Walls";
 
 const FloorHeight = -1.086;
 

@@ -1,7 +1,7 @@
 import { Html } from "@react-three/drei";
+import { useCameraContext } from "../../../../context/CameraContext";
+import { CameraPresets } from "../../../../hooks/CameraPositions";
 import { BlenderObject } from "../../model";
-import { CameraPresets } from "../../../hooks/CameraPositions";
-import { useCameraContext } from "../../../context/CameraContext";
 
 export const FrameOne = () => {
   const { setCameraPreset } = useCameraContext();
