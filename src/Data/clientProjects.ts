@@ -1,11 +1,11 @@
 import { Project } from "../types/types";
 
-interface personalProjects {
+interface clientProjects {
   template: Project;
   projectData: Project[];
 }
 
-export const personalProjects: personalProjects = {
+export const clientProjects: clientProjects = {
   template: {
     name: "",
     "web development tools": [],
@@ -25,7 +25,7 @@ export const personalProjects: personalProjects = {
   projectData: [
     {
       name: "FMK Gulve",
-      "web development tools": ["Next.js", "React", "Typescript"],
+      "web development tools": ["nextjs", "react", "typescript"],
       "completion date": "18. august 2025",
       "repo-link": "https://github.com/LauraBLei/fmkgulve",
       "livepage-link": "https://fmkgulve.vercel.app/da",
@@ -45,12 +45,12 @@ export const personalProjects: personalProjects = {
     {
       name: "Nails by Kate",
       "web development tools": [
-        "Next.js",
-        "TS",
-        "Tailwind",
-        "React",
-        "Vercel",
-        "Github",
+        "nextjs",
+        "typescript",
+        "tailwind",
+        "react",
+        "vercel",
+        "github",
       ],
       "completion date": "29. September 2025",
       "repo-link": "https://github.com/LauraBLei/NailsByKate",
