@@ -70,3 +70,11 @@ input,
 textarea {
   @apply border-1 border-leiDevBlue rounded-md p-2;
 }
+
+.navElement {
+  @apply scale-95 hover:scale-100 font-semibold hover:text-leiDevBlue cursor-pointer transition duration-300;
+}
+
+.navElement.active {
+  @apply text-leiDevBlue;
+}

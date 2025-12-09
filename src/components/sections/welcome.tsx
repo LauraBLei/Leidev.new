@@ -2,7 +2,7 @@ import { useNavigate } from "react-router";
 export const WelcomeSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="max-h-screen w-full bg-green-300 ">
+    <section id="welcome" className="max-h-screen w-full bg-green-300 ">
       <div className="w-full bg-black">
         <div className="overflow-hidden z-0 absolute w-full h-full">
           <img
