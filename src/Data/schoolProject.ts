@@ -26,9 +26,9 @@ export const schoolProjects: schoolProjects = {
     {
       name: "Holidaze",
       "web development tools": [
-        "Typescript",
-        "React",
-        "Tailwind",
+        "typescript",
+        "react",
+        "tailwind",
         "vite",
         "github",
         "git",
@@ -54,9 +54,9 @@ export const schoolProjects: schoolProjects = {
     {
       name: "The Frogs",
       "web development tools": [
-        "Typescript",
-        "React",
-        "Tailwind",
+        "typescript",
+        "react",
+        "tailwind",
         "vite",
         "github",
         "git",
@@ -82,11 +82,11 @@ export const schoolProjects: schoolProjects = {
     {
       name: "Luxora Auctions",
       "web development tools": [
-        "Javascript",
-        "Tailwind",
-        "Github",
-        "Vite",
-        "Git",
+        "javascript",
+        "tailwind",
+        "github",
+        "vite",
+        "git",
       ],
       "completion date": "December 2024",
       "repo-link": "https://github.com/LauraBLei/SemesterProject2",
@@ -108,7 +108,7 @@ export const schoolProjects: schoolProjects = {
     },
     {
       name: "Community Science Museum",
-      "web development tools": ["HTML", "CSS", "Github", "Git"],
+      "web development tools": ["html", "css", "github", "git"],
       "completion date": "December 2023",
       "repo-link": "https://github.com/LauraBLei/-js-1-ca",
       "livepage-link": "https://laurablei.github.io/Semester-project-1/",
