@@ -73,7 +73,7 @@ export const ProjectSection = () => {
 
           {/* 3D Showcase Section */}
           <div className="mt-8 mb-20">
-            <div className="bg-Onyx rounded-lg p-8 shadow-lg">
+            <div className="bg-Onyx  p-8 shadow-lg">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="flex-1">
                   <h4 className="text-base md:text-lg lg:text-2xl font-bold text-Beige mb-4">
