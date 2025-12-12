@@ -39,7 +39,7 @@ p {
 }
 
 .headline {
-  @apply mb-10 font-primary text-base md:text-xl lg:text-2xl w-full p-4 shadow-inner  text-MatteBlack  flex justify-between;
+  @apply mb-10 font-semibold font-primary text-base md:text-xl lg:text-2xl w-full p-4 shadow-inner  text-MatteBlack  flex justify-between;
 }
 
 @layer utilities {
