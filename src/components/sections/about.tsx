@@ -3,11 +3,11 @@ export const AboutSection = () => {
     <section id="about" className="flex w-full justify-center">
       <div className="section">
         <h1 className="headline">About me</h1>
-        <div className="flex gap-2 flex-col md:flex-row">
+        <div className="flex gap-10 flex-col md:flex-row">
           <div className="flex-1 shadow-md">
             <img src="/profileImage.jpg" alt="" />
           </div>
-          <div className="flex-1 flex flex-col gap-5">
+          <div className="flex-1 flex flex-col gap-5 shadow-inner p-5">
             <p className="text">
               My name is Laura, and i'm based in Bergen, Norway.
             </p>

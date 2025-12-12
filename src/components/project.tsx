@@ -32,7 +32,7 @@ export const ProjectCard = (project: Project) => {
       </div>
       <div className="flex-1 flex flex-col gap-5">
         <h2 className="font-semibold text-xl md:text-2xl">{project.name}</h2>
-        <p>{project.text}</p>
+        <p className="shadow-inner p-2">{project.text}</p>
         <div className="flex gap-2 border-y border-MatteBlack py-2 flex-wrap items-center">
           <p className="font-semibold">ToolBox:</p>
           {project["web development tools"].map((tool) => {

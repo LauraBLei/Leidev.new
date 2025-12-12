@@ -10,7 +10,7 @@ export const WelcomeSection = () => {
   }, []);
 
   return (
-    <section id="welcome" className="relative w-full">
+    <section id="welcome" className="relative w-full shadow-2xl">
       <div className="relative w-full h-screen overflow-hidden">
         <div
           className="absolute w-full h-full"

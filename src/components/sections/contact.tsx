@@ -69,14 +69,14 @@ export const ContactSection = () => {
       <div className="flex flex-col  items-center section">
         <h1 className="headline">Contact</h1>
 
-        <div className="w-[120px]  h-[120px] md:w-[200px] md:h-[200px] mx-auto flex items-center justify-center">
+        <div className="w-[120px]  h-[120px] md:w-[200px] md:h-[200px] mx-auto flex items-center justify-center mb-5">
           <img
             className="w-full h-full object-cover rounded-full border-2 border-leiDevBlue shadow-lg"
             src="/profileImage.jpg"
             alt="Profile"
           />
         </div>
-        <div className="px-2 text-center max-w-2xl mx-auto flex flex-col gap-2">
+        <div className="px-2 text-center max-w-2xl mx-auto flex flex-col gap-2 shadow-inner p-5">
           <p>
             I'd love to hear from you! Whether you have a question, want to
             collaborate, or just want to say hi, feel free to reach out using

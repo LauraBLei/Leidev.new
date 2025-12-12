@@ -28,12 +28,12 @@ export const ProjectSection = () => {
       <div className="section">
         <h2 className="headline">Projects</h2>
         <div>
-          <h3 className="text-2xl font-semibold mb-6 text-leiDevBlue">
+          <h3 className="text-base md:text-lg lg:text-2xl font-semibold mb-6 text-leiDevBlue">
             Currently working on:
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 bg-Beige rounded-lg p-8 shadow-lg">
             {/* Project Image */}
-            <div className="overflow-hidden rounded-lg shadow-md h-64 md:h-80 bg-MatteBlack flex items-center justify-center">
+            <div className="overflow-hidden  shadow-md h-64 md:h-80 bg-MatteBlack flex items-center justify-center">
               <div className="w-full h-full bg-linear-to-br from-MatteBlack to-Onyx flex items-center justify-center">
                 <img src="/images/regncon2024.jpeg" alt="regncon logo" />
               </div>
@@ -42,7 +42,9 @@ export const ProjectSection = () => {
             {/* Project Info */}
             <div className="flex flex-col justify-center gap-4">
               <div>
-                <h4 className="text-2xl font-bold  mb-2">Regncon</h4>
+                <h4 className="text-base md:text-lg lg:text-2xl font-bold  mb-2">
+                  Regncon
+                </h4>
                 <p className="text-leiDevBlue font-semibold text-sm mb-3">
                   In Progress
                 </p>
@@ -71,16 +73,16 @@ export const ProjectSection = () => {
 
           {/* 3D Showcase Section */}
           <div className="mt-8 mb-20">
-            <div className="bg-linear-to-r from-leiDevBlue to-Onyx rounded-lg p-8 shadow-lg">
+            <div className="bg-Onyx rounded-lg p-8 shadow-lg">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="flex-1">
-                  <h4 className="text-2xl font-bold text-Beige mb-4">
+                  <h4 className="text-base md:text-lg lg:text-2xl font-bold text-Beige mb-4">
                     Interactive 3D Portfolio
                   </h4>
                   <p className="text-Beige text-sm font-semibold mb-4">
                     In Progress
                   </p>
-                  <p className="text-Beige leading-relaxed mb-6">
+                  <p className="text-Beige leading-relaxed mb-6 ">
                     Building an interactive 3D portfolio with React Three Fiber
                     and Three.js. I've modeled assets in Blender and integrated
                     them into a web experience that showcases my work in a more
@@ -88,18 +90,17 @@ export const ProjectSection = () => {
                     design with web development, creating something both
                     visually engaging and technically interesting.
                   </p>
-                  <a
-                    href="/3d"
-                    className="inline-block px-6 py-3 bg-Beige text-leiDevBlue rounded-md font-semibold hover:bg-opacity-90 transition"
-                  >
+                  <a href="/3d" className="button">
                     Enter 3D Experience →
                   </a>
                 </div>
                 <div className="flex-1">
-                  <div className="w-full h-64 md:h-80 bg-MatteBlack  shadow-md flex items-center justify-center  ">
-                    <p className="text-Beige text-center">
-                      <img src="/images/3d.png" alt="" />
-                    </p>
+                  <div className="w-full h-full overflow-hidden  shadow-md   ">
+                    <img
+                      src="/images/3d.png"
+                      alt=""
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
               </div>
